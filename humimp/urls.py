@@ -13,9 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 
+from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls.static import static
+from jobs.views import ApplicationList, ApplicationRetrieveDestroy
+from activities.views import ActivityList, ActivityRetrieveDestroy
+from blogs.views import BlogList, BlogRetrieveDestroy
+from django.conf.urls import url
+from django.conf import settings
+from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('api/applications', ApplicationList.as_view()),
+    path('api/applications/<int:pk>', ApplicationRetrieveDestroy.as_view()),
+    path('api/activities', ActivityList.as_view()),
+    path('api/activities/<int:pk>', ActivityRetrieveDestroy.as_view()),
+    path('api/blogs', BlogList.as_view()),
+    path('api/blogs/<int:pk>', BlogRetrieveDestroy.as_view()),
+    path('api-auth/', include('rest_framework.urls')),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
