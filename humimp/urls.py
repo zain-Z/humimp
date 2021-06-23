@@ -23,8 +23,14 @@ from blogs.views import BlogList, BlogRetrieveDestroy
 from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
+from django.urls import re_path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('jobs/', include('jobs.urls')),
+
+
+    # django rest api
     path('api/applications', ApplicationList.as_view()),
     path('api/applications/<int:pk>', ApplicationRetrieveDestroy.as_view()),
     path('api/activities', ActivityList.as_view()),
@@ -32,4 +38,9 @@ urlpatterns = [
     path('api/blogs', BlogList.as_view()),
     path('api/blogs/<int:pk>', BlogRetrieveDestroy.as_view()),
     path('api-auth/', include('rest_framework.urls')),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+admin.site.site_url = None
+admin.site.site_header = 'HuminImp Administration'
