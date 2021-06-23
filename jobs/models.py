@@ -111,6 +111,19 @@ class About(models.Model):
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
 
 
+class GetInvolved(models.Model):
+    image_bg_getinvolved = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_careers_getinvolved = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_joinus_getinvolved = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_header_logo_sticky_getinvolved = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_footer_logo_getinvolved = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+
+
 class Index(models.Model):
     image_bg_index_one = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)

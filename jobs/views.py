@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics, permissions, mixins, status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
-from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About
-from .serializers import ApplicationSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer
+from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .serializers import ApplicationSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
@@ -136,6 +136,19 @@ def about(request):
     serializer_class = AboutSerializer(queryset, many=True)
 
     return render(request, 'about.html',
+                  {
+                      'data': serializer_class.data,
+                  }
+                  )
+
+
+def get_involved(request):
+    """Renders the create volunteer page."""
+    assert isinstance(request, HttpRequest)
+    queryset = GetInvolved.objects.all()
+    serializer_class = GetInvolvedSerializer(queryset, many=True)
+
+    return render(request, 'get_involved.html',
                   {
                       'data': serializer_class.data,
                   }

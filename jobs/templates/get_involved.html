@@ -13,14 +13,13 @@
 
   <link rel="shortcut icon" href="{% static 'jobs/images/favicon.png' %}" type="image/x-icon" />
   <link rel="icon" href="{% static 'jobs/images/favicon.png' %}" type="image/x-icon" />
-
   <!-- Responsive Settings -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <!--[if lt IE 9
-      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js' %}"></script
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
     ><![endif]-->
-  <!--[if lt IE 9]><script src="{% static 'jobs/js/respond.js' %}"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
@@ -57,7 +56,7 @@
               <nav class="main-menu navbar-expand-md navbar-light">
                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                   <ul class="navigation clearfix">
-                    <li class="current dropdown"><a href="about.html">ABOUT AIFRD</a>
+                    <li class="current dropdown"><a href="{% url 'about' %}">ABOUT AIFRD</a>
                       <ul>
                         <li><a href="whoWeAre.html">WHO WE ARE </a></li>
                         <li><a href="teams.html">OUR TEAMS</a></li>
@@ -81,7 +80,7 @@
                     </li>
                     <li class="dropdown"><a>LANG</a>
                       <ul>
-                        <li><a href="">ENGLISH</a></li>
+                        <li><a href="">ENFLISH</a></li>
                         <li><a href="">العربية</a></li>
                       </ul>
                     </li>
@@ -108,8 +107,9 @@
         <div class="auto-container clearfix">
           <!--Logo-->
           <div class="logo pull-left">
-            <a href="{% url 'index' %}" title="">{% for i in data %}
-              <img src="{{i.image_header_logo_sticky_volunteer}}" style="height:130px; width:50px;" alt="">
+            <a href="{% url 'index' %}" title="">
+              {% for i in data %}
+              <img src="{{i.image_header_logo_sticky_getinvolved}}" style="height:139px; width:50px;" alt="">
               {% endfor %}</a>
           </div>
           <!--Right Col-->
@@ -133,7 +133,7 @@
 
         <nav class="menu-box">
           <div class="nav-logo">
-            <a href="{% url 'index' %}"><img src="images/nav-logo.png" alt="" title="" /></a>
+            <a href="{% url 'index' %}"><img src="{% static 'jobs/images/nav-logo.png' %}" alt="" title="" /></a>
           </div>
           <div class="menu-outer">
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -166,160 +166,87 @@
 
     <!-- Page Banner Section -->
     <section class="page-banner">
-      {% for v in data %}
-      <div class="image-layer" style="background-image: url('{{v.image_bg_volunteer}}');
+      {% for i in data %}
+      <div class="image-layer" style="background-image: url('{{i.image_bg_getinvolved}}');
           width:1920px;
           height:350px;"></div>
       {% endfor %}
 
       <div class="auto-container">
-        <h2>Become a vital part of Ashor Iraqi Foundation for Relief and Development & make a real difference to lives
-          of many!</h2>
+        <h2>Spread The Love & Get Involved!</h2>
+        <div class="text">Join Us To Save The World Of Humanitarian And Feel Happy To Support</div>
 
       </div>
 
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'index' %}" style="font-size:12px">HOME</a></li>
-            <li><a href="{% url 'get_involved' %}" style="font-size:12px">GET INVOLVED</a></li>
-            <li class="active" style="font-size:12px">VOLUNTEER</li>
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li class="active">GET INVOLVED</li>
           </ul>
         </div>
       </div>
     </section>
     <!--End Banner Section -->
-    <section class="contact-section contact-page" style="padding-left: 20px">
+
+    <section class="featured-section center" style="padding-top:80px">
+
       <div class="auto-container">
-        <div class="row clearfix justify-content-md-center">
-          <!--Form Column-->
-          <form action="{% url 'applicantsList' %}">
-            <div class="form-column">
-              <div class="default-form donate-form">
-                <form method="post" action="contact.html">
-                  <h3 style="padding-bottom: 40px">JOIN US AS VOLUNTEERS</h3>
-                  <div class="row clearfix">
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Fullname</div>
-                      <input type="text" name="full_name" value="" placeholder="" required />
-                    </div>
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Gender</div>
-                      <select class="custom-select-box" name="gender">
-                        <option>Male</option>
-                        <option>Female</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Email</div>
-                      <input type="email" name="email" value="" placeholder="" required />
-                    </div>
 
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Phone</div>
-                      <input type="number" name="phone" value="" placeholder="" />
-                    </div>
+        <div class="featured-row">
+          <div class="row clearfix">
 
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Region</div>
-                      <select class="custom-select-box" name="region">
-                        <option>Baghdad</option>
-                        <option>Mousl</option>
-                        <option>Erbil</option>
-                        <option>Anbar</option>
-                        <option>Babylon</option>
-                        <option>Basra</option>
-                        <option>Dhi Qar</option>
-                        <option>Diyala</option>
-                        <option>Dohuk</option>
-                        <option>Karbala</option>
-                        <option>KirKuk</option>
-                        <option>Maysan</option>
-                        <option>Najaf</option>
-                        <option>Qaisiyah</option>
-                        <option>Salahaddin</option>
-                        <option>Sulaymaniyah</option>
-                        <option>Wasit</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Address</div>
-                      <input type="text" name="address" value="" placeholder="" required />
-                    </div>
-                    <div class="form-group form-group col-md-6 col-sm-12">
-                      <div class="field-label">Upload your CV:</div>
-                      <input type="file" name="upload_cv" style="color: blue" />
-                    </div>
-                    <div class="form-group form-group col-md-6 col-sm-12">
-                      <div class="field-label">LanguageSelect Language</div>
-                      <table>
-                        <tr>
-                          <td style="
-                                margin-left: 50px;
-                                padding-right: 40px;
-                                padding-top: 25px;
-                              ">
-                            <label class="
-                                  mdl-checkbox
-                                  mdl-js-checkbox
-                                  mdl-js-ripple-effect
-                                " for="checkbox1">
-                              <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="english" />
-                              <span class="mdl-checkbox__label">English</span>
-                            </label>
-                          </td>
-
-                          <td style="
-                                margin-left: 50px;
-                                padding-right: 40px;
-                                padding-top: 25px;
-                              ">
-                            <label class="
-                                  mdl-checkbox
-                                  mdl-js-checkbox
-                                  mdl-js-ripple-effect
-                                " for="checkbox2">
-                              <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="arabic" />
-                              <span class="mdl-checkbox__label">Arabic</span>
-                            </label>
-                          </td>
-
-                          <td style="
-                                margin-left: 50px;
-                                padding-right: 40px;
-                                padding-top: 25px;
-                              ">
-                            <label class="
-                                  mdl-checkbox
-                                  mdl-js-checkbox
-                                  mdl-js-ripple-effect
-                                " for="checkbox3">
-                              <input type="checkbox" id="checkbox3" class="mdl-checkbox__input" name="kurdish" />
-                              <span class="mdl-checkbox__label">Kurdish</span>
-                            </label>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-
-                    <div class="form-group form-group col-md-12 col-sm-12">
-                      <div class="field-label">Cover Letter</div>
-                      <textarea name="cover_letter" placeholder=""></textarea>
-                    </div>
-                  </div>
-                  <div class="btn-box" style="padding-top: 30px">
-                    <button type="submit" class="theme-btn btn-style-one">
-                      <span class="btn-title">Submit</span>
-                    </button>
-                  </div>
-                </form>
+            <!--Featured Block Two-->
+            <div class="featured-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image"><a href="careers.html">
+                      {% for i in data %}
+                      <img src="{{i.image_careers_getinvolved}}" alt="" style="width: 360px; height:280 px;">
+                      {% endfor %}
+                    </a></figure>
+                </div>
+                <div class="lower-content">
+                  <h3><a href="careers">CAREERS</a></h3>
+                  <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore
+                    magna aliqua minim.</div>
+                  <div class="link-box"><a href="careers.html" class="theme-btn btn-style-four"><span
+                        class="btn-title">Discover Our Careers</span></a></div>
+                </div>
               </div>
             </div>
-          </form>
+
+            <!--Featured Block Two-->
+            <div class="featured-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image"><a href="{% url 'volunteer' %}">
+                      {% for i in data %}
+                      <img src="{{i.image_joinus_getinvolved}}" alt="" style="width: 360px; height:280 px;">{% endfor %}
+                    </a></figure>
+                </div>
+                <div class="lower-content">
+                  <h3><a href="{% url 'volunteer' %}">JOIN US AS VOLUNTEER</a></h3>
+                  <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore
+                    magna aliqua minim.</div>
+                  <div class="link-box"><a href="{% url 'volunteer' %}" class="theme-btn btn-style-four"><span
+                        class="btn-title">Join Us</span></a></div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
         </div>
+
+
       </div>
     </section>
+
+
+
+
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -333,7 +260,7 @@
                 <div class="widget-content">
                   <div class="footer-logo">
                     <a href="{% url 'index' %}">{% for i in data %}
-                      <img src="{{i.image_footer_logo_volunteer}}" style="height:170px; width:80px;" alt="">
+                      <img src="{{i.image_footer_logo_getinvolved}}" style="height:170px; width:80px;" alt="">
                       {% endfor %}</a>
                   </div>
                   <div class="text">
