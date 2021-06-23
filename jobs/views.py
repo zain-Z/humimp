@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework import generics, permissions, mixins, status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
-from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails
-from .serializers import ApplicationSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer
+from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About
+from .serializers import ApplicationSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
@@ -123,6 +123,19 @@ def what_we_are_doing_details(request):
     serializer_class = WhatWeAreDoingDetailsSerializer(queryset, many=True)
 
     return render(request, 'what_we_are_doing_details.html',
+                  {
+                      'data': serializer_class.data,
+                  }
+                  )
+
+
+def about(request):
+    """Renders the create volunteer page."""
+    assert isinstance(request, HttpRequest)
+    queryset = About.objects.all()
+    serializer_class = AboutSerializer(queryset, many=True)
+
+    return render(request, 'about.html',
                   {
                       'data': serializer_class.data,
                   }

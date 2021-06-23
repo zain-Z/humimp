@@ -100,6 +100,17 @@ class Volunteer(models.Model):
         validators=[validate_image_extension], upload_to='background/volunteer/', null=True, blank=True)
 
 
+class About(models.Model):
+    image_bg_about = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_middle_about = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_header_logo_sticky_about = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_footer_logo_about = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+
+
 class Index(models.Model):
     image_bg_index_one = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails
+from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About
 from django.core.mail import send_mail
 
 
@@ -38,6 +38,17 @@ class VolunteerSerializer(serializers.ModelSerializer):
         fields = ['image_bg_volunteer',
                   'image_header_logo_sticky_volunteer',
                   'image_footer_logo_volunteer',
+                  ]
+
+
+class AboutSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = About
+        fields = ['image_bg_about',
+                  'image_middle_about',
+                  'image_header_logo_sticky_about',
+                  'image_footer_logo_about',
                   ]
 
 
