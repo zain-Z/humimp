@@ -124,6 +124,21 @@ class GetInvolved(models.Model):
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
 
 
+class WhoWeAre(models.Model):
+    image_bg_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_left_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_middle_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_right_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_header_logo_sticky_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    image_footer_logo_who_we_are = models.FileField(
+        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+
+
 class Index(models.Model):
     image_bg_index_one = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)

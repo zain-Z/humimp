@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Application, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .models import Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
 
 
 class ApplicationAdmin(admin.ModelAdmin):
@@ -27,6 +27,16 @@ class GetInvolvedAdmin(admin.ModelAdmin):
                     'image_joinus_getinvolved',
                     'image_header_logo_sticky_getinvolved',
                     'image_footer_logo_getinvolved',
+                    ]
+
+
+class WhoWeAreAdmin(admin.ModelAdmin):
+    list_display = ['image_bg_who_we_are',
+                    'image_left_who_we_are',
+                    'image_middle_who_we_are',
+                    'image_right_who_we_are',
+                    'image_header_logo_sticky_who_we_are',
+                    'image_footer_logo_who_we_are',
                     ]
 
 
@@ -81,5 +91,6 @@ admin.site.register(Donate, DonateAdmin)
 admin.site.register(Application, ApplicationAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(About, AboutAdmin)
+admin.site.register(WhoWeAre, WhoWeAreAdmin)
 admin.site.register(WhatWeAreDoing, WhatWeAreDoingAdmin)
 admin.site.register(WhatWeAreDoingDetails, WhatWeAreDoingDetailsAdmin)
