@@ -15,6 +15,7 @@ class CareerDetail(models.Model):
     title = models.CharField(max_length=300, default='')
     description = models.TextField()
     contract_duration = models.CharField(max_length=300, default='')
+    governorate = models.CharField(max_length=300, default='')
     job_type = models.CharField(choices=JOB_TYPE, max_length=1)
     job_shift = models.CharField(choices=JOB_TYPE, max_length=1)
     location = models.CharField(max_length=300, default='')

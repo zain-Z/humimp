@@ -10,6 +10,7 @@ class CareerDetailSerializer(serializers.ModelSerializer):
                   'title',
                   'description',
                   'contract_duration',
+                  'governorate',
                   'job_type',
                   'job_shift',
                   'location',

@@ -175,7 +175,9 @@
       {% endfor %}
 
       <div class="auto-container">
-        <h1>Data Entry</h1>
+        {% for i in data %}
+        <h1>{{i.title}}</h1>
+        {% endfor %}
       </div>
 
       <div class="breadcrumb-box">
@@ -206,40 +208,9 @@
                 <div class="lower-box">
                   <div class="post-content">
                     <h3 style="font-size:20px">Career Description</h3>
-                    <p>
-                      Since the Government of Iraq declared that combat operations against the Islamic State group (IS)
-                      had ended in 2017, Iraq has been recovering from the significant damage and destruction caused by
-                      the armed conflict. Of the more than six million Iraqis who fled their homes since 2014, 4.5
-                      million Iraqis have returned to their area of origin and 1.4 million remain internally displaced.
-                      Many Iraqis have returned to areas that lack basic infrastructure, services, and livelihood
-                      opportunities, or where explosive devices have not been cleared. Other challenges returnees and
-                      secondarily displaced people face include the lack of security, community acceptance, housing,
-                      property, and civil documentation issues as well as critical educational and health service gaps.
-                      Throughout this, Iraq continues to host over a quarter of a million Syrian refugees.
-
-
-                    </p>
-                    <p>
-                      The UN estimates that more than 4.1 million Iraqis will need assistance in 2020, 1.77 million of
-                      them in acute need. With military operations against IS group having ended, the Iraqi government
-                      faces new challenges to ensure an inclusive reconstruction and reconciliation that will sustain
-                      peace.
-                      .
-                    </p>
-                    <p>
-                      Since 2010, NRC Iraq has been assisting internally displaced Iraqis, Syrian refugees, returnees,
-                      and host communities in Ninewa, Dohuk, Erbil, Kirkuk, Basra, Salahdeen, and Anbar Governorates.
-
-                      We focus on assisting the newly displaced, those experiencing protracted displacement in camps,
-                      and people returning to and living in hard-to-reach places by improving their chance of obtaining
-                      a durable solution. NRC runs integrated programs across Iraq to respond to people in need using
-                      our shelter and settlements, education, camp management, legal assistance, livelihoods, and cash
-                      activities..
-                    </p>
-
-
-
-
+                    {% for i in data %}
+                    <p>{{i.description}}</p>
+                    {% endfor %}
                   </div>
                   <h2 style="font-size:20px">Job Information</h2>
                   <div class=" clearfix">
@@ -248,27 +219,39 @@
                         <tbody>
                           <tr>
                             <th scope="row">Contract Duration</th>
-                            <td>6 month</td>
+                            {% for i in data %}
+                            <td>{{i.contract_duration}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Governorate</th>
-                            <td>Nineveh</td>
+                            {% for i in data %}
+                            <td>{{i.governorate}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Working Hours</th>
-                            <td colspan="2">Full Time</td>
+                            {% for i in data %}
+                            <td colspan="2">{{i.job_type}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Job Shift</th>
-                            <td colspan="2">Full Time</td>
+                            {% for i in data %}
+                            <td colspan="2">{{i.job_shift}}</td>
+                            {% endfor %}
                           <tr>
                             <th scope="row">Location</th>
-                            <td>Mousl</td>
+                            {% for i in data %}
+                            <td>{{i.location}}</td>
+                            {% endfor %}
                           </tr>
                           </tr>
                           <tr>
                             <th scope="row">Posted</th>
-                            <td colspan="2">2021-06-01</td>
+                            {% for i in data %}
+                            <td colspan="2">{{i.posted}}</td>
+                            {% endfor %}
                           </tr>
                         </tbody>
                       </table>
@@ -281,15 +264,21 @@
                         <tbody>
                           <tr>
                             <th scope="row">Minimum Education </th>
-                            <td>Bachelor Degree</td>
+                            {% for i in data %}
+                            <td>{{i.minimum_education}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Minimum Experience</th>
-                            <td>2 Year</td>
+                            {% for i in data %}
+                            <td>{{i.minimum_experience}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Required Travel</th>
-                            <td colspan="2">50%</td>
+                            {% for i in data %}
+                            <td colspan="2">{{i.required_travel}}</td>
+                            {% endfor %}
                           </tr>
 
                         </tbody>
@@ -303,15 +292,21 @@
                         <tbody>
                           <tr>
                             <th scope="row">No Of Jobs </th>
-                            <td>1</td>
+                            {% for i in data %}
+                            <td>{{i.no_of_jobs}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Published Date</th>
-                            <td>2021-06-01</td>
+                            {% for i in data %}
+                            <td>{{i.posted}}</td>
+                            {% endfor %}
                           </tr>
                           <tr>
                             <th scope="row">Deadline Date</th>
-                            <td colspan="2">2021-06-15</td>
+                            {% for i in data %}
+                            <td colspan="2">{{i.deadline}}</td>
+                            {% endfor %}
                           </tr>
 
                         </tbody>

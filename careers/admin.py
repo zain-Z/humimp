@@ -7,6 +7,7 @@ class CareerDetailAdmin(admin.ModelAdmin):
                     'title',
                     'description',
                     'contract_duration',
+                    'governorate',
                     'job_type',
                     'job_shift',
                     'location',
