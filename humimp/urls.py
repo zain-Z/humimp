@@ -19,15 +19,13 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from jobs.views import ApplicationList, ApplicationRetrieveDestroy
 from activities.views import ActivityList, ActivityRetrieveDestroy
-from blogs.views import BlogList, BlogRetrieveDestroy
-from django.conf.urls import url
 from django.conf import settings
-from django.views.static import serve
-from django.urls import re_path
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/', include('jobs.urls')),
+    path('blogs/', include('blogs.urls')),
 
 
     # django rest api
@@ -35,8 +33,6 @@ urlpatterns = [
     path('api/applications/<int:pk>', ApplicationRetrieveDestroy.as_view()),
     path('api/activities', ActivityList.as_view()),
     path('api/activities/<int:pk>', ActivityRetrieveDestroy.as_view()),
-    path('api/blogs', BlogList.as_view()),
-    path('api/blogs/<int:pk>', BlogRetrieveDestroy.as_view()),
     path('api-auth/', include('rest_framework.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
