@@ -1,5 +1,4 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from .validators import validate_image_extension
 
 JOB_TYPE = (
@@ -14,7 +13,7 @@ class CareerDetail(models.Model):
     image_bg_career = models.FileField(
         validators=[validate_image_extension], upload_to='background/career/', null=True, blank=True)
     title = models.CharField(max_length=300, default='')
-    description = RichTextField()
+    description = models.TextField()
     contract_duration = models.CharField(max_length=300, default='')
     job_type = models.CharField(choices=JOB_TYPE, max_length=1)
     job_shift = models.CharField(choices=JOB_TYPE, max_length=1)
