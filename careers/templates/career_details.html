@@ -12,7 +12,8 @@
   <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
 
   <link rel="shortcut icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
-  <link rel="icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
+    <link rel="icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
+
   <!-- Responsive Settings -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -29,7 +30,7 @@
       <div class="icon"></div>
     </div>
 
-    <!-- Main Header -->
+
     <header class="main-header header-style-one">
 
       <!-- Header Upper -->
@@ -39,9 +40,10 @@
             <!--Logo-->
             <div class="logo-box">
               <div class="logo">
-                <a href="{% url 'index' %}" title="Ashor Iraqi Foundation for Relief and Development"><img
-                    src="{% static 'careers/images/logo.jpg' %}"
-                    alt="Ashor Iraqi Foundation for Relief and Development" /></a>
+                <a href="{% url 'index' %}" title="Ashor Iraqi Foundation for Relief and Development">
+                  <img
+                  src="{% static 'careers/images/logo.jpg' %}"
+                     alt="Ashor Iraqi Foundation for Relief and Development" /></a>
               </div>
             </div>
 
@@ -93,8 +95,7 @@
               <!-- Main Menu End-->
 
               <div class="donate-link">
-                <a href="{% url 'donate' %}" class="theme-btn btn-style-one"><span class="btn-title">Donate
-                    Now</span></a>
+                <a href="{% url 'donate' %}" class="theme-btn btn-style-one"><span class="btn-title">Donate Now</span></a>
               </div>
             </div>
           </div>
@@ -109,8 +110,8 @@
           <div class="logo pull-left">
             <a href="{% url 'index' %}" title="">
               {% for i in data %}
-              <img src="{{i.image_header_logo_sticky_getinvolved}}" style="height:139px; width:50px;" alt="">
-              {% endfor %}</a>
+                <img src="{{i.image_header_logo_sticky_career_detail}}" style="height:139px; width:50px;" alt="">
+                {% endfor %}</a>
           </div>
           <!--Right Col-->
           <div class="pull-right">
@@ -133,7 +134,8 @@
 
         <nav class="menu-box">
           <div class="nav-logo">
-            <a href="{% url 'index' %}"><img src="{% static 'careers/images/nav-logo.png' %}" alt="" title="" /></a>
+            <a href="{% url 'index' %}">
+              <img src="{% static 'careers/images/nav-logo.png' %}" alt="" title="" /></a>
           </div>
           <div class="menu-outer">
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -167,86 +169,241 @@
     <!-- Page Banner Section -->
     <section class="page-banner">
       {% for i in data %}
-      <div class="image-layer" style="background-image: url('{{i.image_bg_getinvolved}}');
+      <div class="image-layer" style="background-image: url('{{i.image_bg_blogs}}');
           width:1920px;
           height:350px;"></div>
       {% endfor %}
 
       <div class="auto-container">
-        <h2>Spread The Love & Get Involved!</h2>
-        <div class="text">Join Us To Save The World Of Humanitarian And Feel Happy To Support</div>
-
+        <h1>Data Entry</h1>
       </div>
 
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'index' %}">HOME</a></li>
-            <li class="active">GET INVOLVED</li>
+            <li><a href="{% url 'index' %}" style="font-size: 12px">HOME</a></li>
+            <li>
+              <a href="{% url 'get_involved' %}" style="font-size: 12px">GET INVOLVED</a>
+            </li>
+            <li>
+              <a href="{% url 'get_involved' %}" style="font-size: 12px">CAREERS</a>
+            </li>
           </ul>
         </div>
       </div>
     </section>
     <!--End Banner Section -->
 
-    <section class="featured-section center" style="padding-top:80px">
-
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
       <div class="auto-container">
+        <div class="row clearfix">
+          <!--Content Side / Blog Detail-->
+          <div class="content-side col-lg-8 col-md-12 col-sm-12">
+            <div class="post-details">
+              <!--Event Details-->
+              <div class="event-details">
+                <div class="lower-box">
+                  <div class="post-content">
+                    <h3 style="font-size:20px">Career Description</h3>
+                    <p>
+                      Since the Government of Iraq declared that combat operations against the Islamic State group (IS)
+                      had ended in 2017, Iraq has been recovering from the significant damage and destruction caused by
+                      the armed conflict. Of the more than six million Iraqis who fled their homes since 2014, 4.5
+                      million Iraqis have returned to their area of origin and 1.4 million remain internally displaced.
+                      Many Iraqis have returned to areas that lack basic infrastructure, services, and livelihood
+                      opportunities, or where explosive devices have not been cleared. Other challenges returnees and
+                      secondarily displaced people face include the lack of security, community acceptance, housing,
+                      property, and civil documentation issues as well as critical educational and health service gaps.
+                      Throughout this, Iraq continues to host over a quarter of a million Syrian refugees.
 
-        <div class="featured-row">
-          <div class="row clearfix">
 
-            <!--Featured Block Two-->
-            <div class="featured-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image"><a href="{% url 'careerdetail' %}">
-                      {% for i in data %}
-                      <img src="{{i.image_careers_getinvolved}}" alt="" style="width: 360px; height:280 px;">
-                      {% endfor %}
-                    </a></figure>
+                    </p>
+                    <p>
+                      The UN estimates that more than 4.1 million Iraqis will need assistance in 2020, 1.77 million of
+                      them in acute need. With military operations against IS group having ended, the Iraqi government
+                      faces new challenges to ensure an inclusive reconstruction and reconciliation that will sustain
+                      peace.
+                      .
+                    </p>
+                    <p>
+                      Since 2010, NRC Iraq has been assisting internally displaced Iraqis, Syrian refugees, returnees,
+                      and host communities in Ninewa, Dohuk, Erbil, Kirkuk, Basra, Salahdeen, and Anbar Governorates.
+
+                      We focus on assisting the newly displaced, those experiencing protracted displacement in camps,
+                      and people returning to and living in hard-to-reach places by improving their chance of obtaining
+                      a durable solution. NRC runs integrated programs across Iraq to respond to people in need using
+                      our shelter and settlements, education, camp management, legal assistance, livelihoods, and cash
+                      activities..
+                    </p>
+
+
+
+
+                  </div>
+                  <h2 style="font-size:20px">Job Information</h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Contract Duration</th>
+                            <td>6 month</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Governorate</th>
+                            <td>Nineveh</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Working Hours</th>
+                            <td colspan="2">Full Time</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Job Shift</th>
+                            <td colspan="2">Full Time</td>
+                          <tr>
+                            <th scope="row">Location</th>
+                            <td>Mousl</td>
+                          </tr>
+                          </tr>
+                          <tr>
+                            <th scope="row">Posted</th>
+                            <td colspan="2">2021-06-01</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h2 style="font-size:20px">Requirements</h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Minimum Education </th>
+                            <td>Bachelor Degree</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Minimum Experience</th>
+                            <td>2 Year</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Required Travel</th>
+                            <td colspan="2">50%</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h2 style="font-size:20px"> Job Status </h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">No Of Jobs </th>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Published Date</th>
+                            <td>2021-06-01</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Deadline Date</th>
+                            <td colspan="2">2021-06-15</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+
                 </div>
-                <div class="lower-content">
-                  <h3><a href="careers">CAREERS</a></h3>
-                  <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore
-                    magna aliqua minim.</div>
-                  <div class="link-box"><a href="{% url 'careerdetail' %}" class="theme-btn btn-style-four"><span
-                        class="btn-title">Discover Our Careers</span></a></div>
-                </div>
+
               </div>
             </div>
-
-            <!--Featured Block Two-->
-            <div class="featured-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image"><a href="{% url 'volunteer' %}">
-                      {% for i in data %}
-                      <img src="{{i.image_joinus_getinvolved}}" alt="" style="width: 360px; height:280 px;">{% endfor %}
-                    </a></figure>
-                </div>
-                <div class="lower-content">
-                  <h3><a href="{% url 'volunteer' %}">JOIN US AS VOLUNTEER</a></h3>
-                  <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore
-                    magna aliqua minim.</div>
-                  <div class="link-box"><a href="{% url 'volunteer' %}" class="theme-btn btn-style-four"><span
-                        class="btn-title">Join Us</span></a></div>
-                </div>
-              </div>
-            </div>
-
-
-
           </div>
+          <!--End Content Side-->
+
+          <!--Sidebar Side-->
+          <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+            <aside class="sidebar">
+
+
+              <!-- Category Widget -->
+              <div class="sidebar-widget category-widget">
+                <div class="widget-inner">
+                  <h3 style="font-size:20px">Role and responsibilities</h3>
+                  <div class="widget-content">
+                    <ul>
+                      <li>
+                        <a class="clearfix">Adherence to NRC policies, guidance and procedures.</a>
+                      </li>
+                      <li class="active">
+                        <a class="clearfix">Support and contribute to the development and implementation of country
+                          office (CO) M&E framework and SOPs, guidance and tools.</a>
+                      </li>
+                      <li>
+                        <a class="clearfix">Participate in programme design and proposal discussions, including theory
+                          of change development, log frame design and budgeting for M&E.</a>
+                      </li>
+                      <li>
+                        <a class="clearfix">Support programme staff in planning for and executing M&E, including, data
+                          collection methodology and tools and data management, analysis and use.</a>
+                      </li>
+                      <li>
+                        <a class="clearfix">Support the implementation, dissemination and use of evaluations,
+                          assessments and monitoring data in programme development, adjustment or review.</a>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category Widget -->
+              <div class="sidebar-widget category-widget">
+                <div class="widget-inner">
+                  <h3 style="font-size:20px">Qualifications & Preferred Skills</h3>
+                  <div class="widget-content">
+                    <ul>
+                      <li>
+                        <a class="clearfix">University bachelor's degree in a related fields, such as social science,
+                          economics, operations research, quantitative analysis, or other related fields.</a>
+                      </li>
+                      <li class="active">
+                        <a class="clearfix">At least 1-2 years of experience in an international/local non-governmental
+                          organization (I/NGO) preferably in an emergency or post-conflict setting, including M&E
+                          capacity and systems development.</a>
+                      </li>
+                      <li>
+                        <a class="clearfix">Thorough experience with and knowledge of principles and current approaches
+                          to monitoring and evaluation in relief and development programs, using both quantitative and
+                          qualitative methods.</a>
+                      </li>
+                      <li>
+                        <a class="clearfix">Understanding of data and information needs for program management and
+                          decision making.</a>
+                      </li>
+
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="link-box">
+            <a href="{% url 'volunteer' %}" class="theme-btn btn-style-two"><span class="btn-title">Apply Now</span></a>
+          </div>
+          <!--End Sidebar Side-->
         </div>
-
-
       </div>
-    </section>
-
-
-
-
+    </div>
+    <!-- End Sidebar Page Container -->
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -259,8 +416,9 @@
               <div class="footer-widget logo-widget">
                 <div class="widget-content">
                   <div class="footer-logo">
-                    <a href="{% url 'index' %}">{% for i in data %}
-                      <img src="{{i.image_footer_logo_getinvolved}}" style="height:170px; width:80px;" alt="">
+                    <a href="{% url 'index' %}">
+                      {% for i in data %}
+                      <img src="{{i.image_footer_logo_career_detail}}" style="height:170px; width:80px;" alt="">
                       {% endfor %}</a>
                   </div>
                   <div class="text">
@@ -292,7 +450,7 @@
                 <div class="column col-lg-4 col-md-4 col-sm-12">
                   <div class="footer-widget links-widget">
                     <div class="widget-content">
-                      <h3>ABOUT AIFRD</h3>
+                      <h3>ABOU AIFRD</h3>
                       <ul>
                         <li><a href="{% url 'who_we_are' %}">WHO WE ARE</a></li>
                         <li><a href="{% url 'teams' %}">OUR TEAM</a></li>
@@ -368,7 +526,6 @@
   <div class="scroll-to-top scroll-to-target" data-target="html">
     <span class="flaticon-up-arrow"></span>
   </div>
-
   <script src="{% static 'careers/js/jquery.js' %}"></script>
   <script src="{% static 'careers/js/popper.min.js' %}"></script>
   <script src="{% static 'careers/js/bootstrap.min.js' %}"></script>

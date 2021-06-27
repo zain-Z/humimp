@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics, permissions, mixins, status
-from rest_framework.exceptions import ValidationError
-from rest_framework.response import Response
+from rest_framework import generics, permissions
 from .models import Application, WhatWeAreDoing, Volunteer, WhoWeAre, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
 from .serializers import ApplicationSerializer, WhoWeAreSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest

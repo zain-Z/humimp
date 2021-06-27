@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/', include('jobs.urls')),
     path('blogs/', include('blogs.urls')),
+    path('careers/', include('careers.urls')),
 
 
     # django rest api

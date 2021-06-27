@@ -6,13 +6,13 @@
   <title>Ashor Iraqi Foundation for Relief and Development</title>
   {% load static %}
   <!-- Stylesheets -->
-  <link href="{% static 'jobs/css/bootstrap.css' %}" rel="stylesheet" />
-  <link href="{% static 'jobs/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/style.css' %}" rel="stylesheet" />
   <!-- Responsive File -->
-  <link href="{% static 'jobs/css/responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
 
-  <link rel="shortcut icon" href="{% static 'jobs/images/favicon.png' %}" type="image/x-icon" />
-  <link rel="icon" href="{% static 'jobs/images/favicon.png' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
+  <link rel="icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
 
   <!-- Responsive Settings -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,7 +37,7 @@
             <div class="logo-box">
               <div class="logo">
                 <a href="{% url 'index' %}" title="Ashor Iraqi Foundation for Relief and Development"><img
-                    src="{% static 'jobs/images/logo.jpg' %}"
+                    src="{% static 'careers/images/logo.jpg' %}"
                     alt="Ashor Iraqi Foundation for Relief and Development" /></a>
               </div>
             </div>
@@ -71,7 +71,7 @@
                     </li>
                     <li class="dropdown"><a href="{% url 'get_involved' %}">GET INVOLVED</a>
                       <ul>
-                        <li><a href="careers.html">CAREERS</a></li>
+                        <li><a href="{% url 'careerdetail' %}">CAREERS</a></li>
                         <li><a href="{% url 'volunteer' %}">JOIN US AS VOLUNTEERS</a></li>
                       </ul>
                     </li>
@@ -129,7 +129,7 @@
 
         <nav class="menu-box">
           <div class="nav-logo">
-            <a href="{% url 'index' %}"><img src="{% static 'jobs/images/nav-logo.png' %}" alt="" title="" /></a>
+            <a href="{% url 'index' %}"><img src="{% static 'careers/images/nav-logo.png' %}" alt="" title="" /></a>
           </div>
           <div class="menu-outer">
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -614,18 +614,18 @@
     <span class="flaticon-up-arrow"></span>
   </div>
 
-  <script src="{% static 'jobs/js/jquery.js' %}"></script>
-  <script src="{% static 'jobs/js/popper.min.js' %}"></script>
-  <script src="{% static 'jobs/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'jobs/js/jquery-ui.js' %}"></script>
-  <script src="{% static 'jobs/js/jquery.fancybox.js' %}"></script>
-  <script src="{% static 'jobs/js/owl.js' %}"></script>
-  <script src="{% static 'jobs/js/appear.js' %}"></script>
-  <script src="{% static 'jobs/js/wow.js' %}"></script>
-  <script src="{% static 'jobs/js/scrollbar.js' %}"></script>
-  <script src="{% static 'jobs/js/validate.js' %}"></script>
-  <script src="{% static 'jobs/js/paroller.js' %}"></script>
-  <script src="{% static 'jobs/js/custom-script.js' %}"></script>
+  <script src="{% static 'careers/js/jquery.js' %}"></script>
+  <script src="{% static 'careers/js/popper.min.js' %}"></script>
+  <script src="{% static 'careers/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'careers/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'careers/js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'careers/js/owl.js' %}"></script>
+  <script src="{% static 'careers/js/appear.js' %}"></script>
+  <script src="{% static 'careers/js/wow.js' %}"></script>
+  <script src="{% static 'careers/js/scrollbar.js' %}"></script>
+  <script src="{% static 'careers/js/validate.js' %}"></script>
+  <script src="{% static 'careers/js/paroller.js' %}"></script>
+  <script src="{% static 'careers/js/custom-script.js' %}"></script>
 </body>
 
 </html>
