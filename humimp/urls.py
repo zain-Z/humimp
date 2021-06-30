@@ -24,9 +24,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jobs/', include('jobs.urls')),
-    path('blogs/', include('blogs.urls')),
-    path('careers/', include('careers.urls')),
+    path('jobs/', include('jobs.urls', namespace='jobs')),
+    path('blogs/', include('blogs.urls', namespace='blogs')),
+    path('careers/', include('careers.urls', namespace='careers')),
 
 
     # django rest api

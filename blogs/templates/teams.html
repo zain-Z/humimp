@@ -40,7 +40,7 @@
               <div class="logo-box">
                 <div class="logo">
                   <a
-                    href="{% url 'index' %}"
+                    href="{% url 'jobs:index' %}"
                     title="Ashor Iraqi Foundation for Relief and Development"
                     ><img
                       src="{% static 'careers/images/logo.jpg' %}"
@@ -60,26 +60,26 @@
                 <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="{% url 'about' %}">ABOUT AIFRD</a>
+                                    <li class="current dropdown"><a href="{% url 'jobs:about' %}">ABOUT AIFRD</a>
                                         <ul>
-                                            <li><a href="{% url 'who_we_are' %}">WHO WE ARE </a></li>
-                                            <li><a href="{% url 'teams' %}">OUR TEAMS</a></li>
+                                            <li><a href="{% url 'jobs:who_we_are' %}">WHO WE ARE </a></li>
+                                            <li><a href="{% url 'blogs:teams' %}">OUR TEAMS</a></li>
                                             <li><a href="index-3.html">VISION & MISSION & VALUES</a></li>
                                         </ul>
                                     </li>
-                              <li><a href="{% url 'what_we_are_doing' %}">WHAT WE ARE DOING</a></li>
+                              <li><a href="{% url 'jobs:what_we_are_doing' %}">WHAT WE ARE DOING</a></li>
 
-									<li class="dropdown"><a href="{% url 'stories_and_blogs' %}">STORIES & BLOG</a>
+									<li class="dropdown"><a href="{% url 'blogs:stories_and_blogs' %}">STORIES & BLOG</a>
                                         <ul>
-                                            <li><a href="{% url 'story' %}"> STORIES</a></li>
-                                            <li><a href="{% url 'blogs' %}">  BLOGS</a></li>
+                                            <li><a href="{% url 'blogs:story' %}"> STORIES</a></li>
+                                            <li><a href="{% url 'blogs:blogs' %}">  BLOGS</a></li>
 										
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="{% url 'get_involved' %}">GET INVOLVED</a>
+                                    <li class="dropdown"><a href="{% url 'jobs:get_involved' %}">GET INVOLVED</a>
                                         <ul>
-                                            <li><a href="{% url 'careerdetail' %}">CAREERS</a></li>
-											<li><a href="{% url 'volunteer' %}">JOIN US AS VOLUNTEERS</a></li>
+                                            <li><a href="{% url 'careers:career_list' %}">CAREERS</a></li>
+											<li><a href="{% url 'jobs:volunteer' %}">JOIN US AS VOLUNTEERS</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a>LANG</a>
@@ -97,7 +97,7 @@
                 <!-- Main Menu End-->
 
                 <div class="donate-link">
-                  <a href="{% url 'donate' %}" class="theme-btn btn-style-one"
+                  <a href="{% url 'jobs:donate' %}" class="theme-btn btn-style-one"
                     ><span class="btn-title">Donate Now</span></a
                   >
                 </div>
@@ -112,7 +112,7 @@
           <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-              <a href="{% url 'index' %}" title=""
+              <a href="{% url 'jobs:index' %}" title=""
                 >{% for i in data %}
                 <img src="{{i.image_header_logo_sticky_team}}" style="height:139px; width:50px;" alt="">
                 {% endfor %}</a>
@@ -138,7 +138,7 @@
 
           <nav class="menu-box">
             <div class="nav-logo">
-              <a href="{% url 'index' %}"
+              <a href="{% url 'jobs:index' %}"
                 ><img src="{% static 'careers/images/nav-logo.png' %}" alt="" title=""
               /></a>
             </div>
@@ -187,8 +187,8 @@
         <div class="breadcrumb-box">
           <div class="auto-container">
             <ul class="bread-crumb clearfix">
-              <li><a href="{% url 'index' %}">HOME</a></li>
-             <li><a href="{% url 'about' %}">ABOUT AIFRD</a></li>
+              <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+             <li><a href="{% url 'jobs:about' %}">ABOUT AIFRD</a></li>
               <li class="active">OUR TEAM</li>
             </ul>
           </div>
@@ -280,7 +280,7 @@
                 <div class="footer-widget logo-widget">
                   <div class="widget-content">
                     <div class="footer-logo">
-                      <a href="{% url 'index' %}"
+                      <a href="{% url 'jobs:index' %}"
                         >{% for i in data %}
                         <img src="{{i.image_header_logo_sticky_team}}" style="height:80px; width:170px;" alt="">
                         {% endfor %}</a>
@@ -316,8 +316,8 @@
                       <div class="widget-content">
                         <h3>ABOU AIFRD</h3>
                         <ul>
-                          <li><a href="{% url 'who_we_are' %}">WHO WE ARE</a></li>
-                          <li><a href="{% url 'teams' %}">OUR TEAM</a></li>
+                          <li><a href="{% url 'jobs:who_we_are' %}">WHO WE ARE</a></li>
+                          <li><a href="{% url 'blogs:teams' %}">OUR TEAM</a></li>
                           <li><a href="vission-mission-value.html">VISION,MISSION & VALUE</a></li>
                         </ul>
                       </div>
@@ -357,9 +357,9 @@
                         <h3>QUICK LINKS</h3>
                         <ul>
                         
-                          <li><a href="{% url 'what_we_are_doing' %}">WHAT WE ARE DOING</a></li>
-                          <li><a href="{% url 'stories_and_blogs' %}">STORIES & BLOG</a></li>
-                          <li><a href="{% url 'get_involved' %}">GET INVOLVED</a></li>
+                          <li><a href="{% url 'jobs:what_we_are_doing' %}">WHAT WE ARE DOING</a></li>
+                          <li><a href="{% url 'blogs:stories_and_blogs' %}">STORIES & BLOG</a></li>
+                          <li><a href="{% url 'jobs:get_involved' %}">GET INVOLVED</a></li>
                         </ul>
                       </div>
                     </div>

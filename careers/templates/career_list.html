@@ -5,20 +5,17 @@
     <title>Ashor Iraqi Foundation for Relief and Development</title>
     {% load static %}
     <!-- Stylesheets -->
-     <link href="{% static 'careers/css/bootstrap.css' %}" rel="stylesheet" />
-     <link href="{% static 'careers/css/style.css' %}" rel="stylesheet" />
-    <!-- Responsive File -->
-     <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/style.css' %}" rel="stylesheet" />
+  <!-- Responsive File -->
+  <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
-    <link rel="icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
+  <link rel="icon" href="{% static 'careers/images/favicon.png' %}" type="image/x-icon" />
 
     <!-- Responsive Settings -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lt IE 9
       ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
     ><![endif]-->
@@ -30,7 +27,7 @@
       <div class="preloader"><div class="icon"></div></div>
 
       <!-- Main Header -->
-       <header class="main-header header-style-one">
+     <header class="main-header header-style-one">
        
         <!-- Header Upper -->
         <div class="header-upper">
@@ -43,7 +40,7 @@
                     href="{% url 'jobs:index' %}"
                     title="Ashor Iraqi Foundation for Relief and Development"
                     ><img
-                      src="{% static 'careers/images/logo.jpg' %}"
+                      src="images/logo.jpg"
                       alt="Ashor Iraqi Foundation for Relief and Development" 
                   /></a>
                 </div>
@@ -113,9 +110,8 @@
             <!--Logo-->
             <div class="logo pull-left">
               <a href="{% url 'jobs:index' %}" title=""
-                >{% for i in data %}
-                <img src="{{i.image_header_logo_sticky_stories_and_blogs}}" style="height:139px; width:50px;" alt="">
-                {% endfor %}</a>
+                ><img src="images/sticky-logo.png" alt="" title=""
+              /></a>
             </div>
             <!--Right Col-->
             <div class="pull-right">
@@ -139,7 +135,7 @@
           <nav class="menu-box">
             <div class="nav-logo">
               <a href="{% url 'jobs:index' %}"
-                ><img src="{% static 'careers/images/nav-logo.png' %}" alt="" title=""
+                ><img src="images/nav-logo.png" alt="" title=""
               /></a>
             </div>
             <div class="menu-outer">
@@ -173,89 +169,75 @@
 
       <!-- Page Banner Section -->
       <section class="page-banner">
-        {% for i in data %}
-      <div class="image-layer" style="background-image: url('{{i.image_bg_stories_and_blogs}}');
-          width:1920px;
-          height:350px;"></div>
-      {% endfor %}
+        <div
+          class="image-layer"
+          style="background-image: url(images/background/bg-page-title-2.jpg)"
+        ></div>
+
         <div class="auto-container">
-          <h1>STORIES & BLOGS</h1>
+          <h2>
+            Become a vital part of Ashor Iraqi Foundation for Relief and
+            Development & make a real difference to lives of many!
+          </h2>
         </div>
 
         <div class="breadcrumb-box">
           <div class="auto-container">
             <ul class="bread-crumb clearfix">
-              <li><a href="{% url 'jobs:index' %}">HOME</a></li>
-              <li class="active">STORIES & BLOGS</li>
+              <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+              <li>
+                <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px"
+                  >GET INVOLVED</a
+                >
+              </li>
+              <li class="active" style="font-size: 12px">CAREERS</li>
             </ul>
           </div>
         </div>
       </section>
       <!--End Banner Section -->
-   
 
-  <section class="causes-section alternate">
-          <div class="auto-container">
-        
-           
-                        
-            <div class="row clearfix">
-            
-                <!--Cause Block-->
-                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
-                        <div class="image-box">
-                            <figure class="image"><a href="cause-single.html">
-                             {% for i in data %}
-                          <img src="{{i.image_stories_and_blogs_right}}" style="height:280px; width:360px;" alt="">
-                           {% endfor %}</a>
-                            </figure>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="100%"></div>
-                                </div>
-                            </div>
+      <!-- News Section Two-->
+      <section class="news-section-two">
+        <div class="auto-container">
+          <div class="row clearfix">
+            <!--Left Column-->
+            <div class="left-column">
+              <div class="inner">
+                <div class="news-box">
+                  
+                    
+                  <div class="news-post ">
+                        <div class="post-thumb" style="padding-left:10px">{% for career in careers %}
+                            <a href="{% url 'careers:career_detail' career.id %}">  
+                              <figure class="thumb">
+                                  <img src="{{career.image_career_details.url}}" alt="" style="width:90px;height: 85px;"/>
+                              </figure>
+                            </a>
                         </div>
-                        <div class="lower-content">
-                            <h3><a href="{% url 'blogs:story' %}">OUR STORIES</a></h3>
-                            <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                          </div>
-                    </div>
-                </div>
-                
-                <!--Cause Block-->
-                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
-                        <div class="image-box">
-                            <figure class="image"><a href="cause-single.html">
-                             {% for i in data %}
-                          <img src="{{i.image_stories_and_blogs_middle}}" style="height:280px; width:360px;" alt="">
-                           {% endfor %}</a>
-                            </figure>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="100%"></div>
-                                </div>
-                            </div>
+                      <h4 class="name">{{career}}</h4>
+                        <div style="padding: 0px">
+                            {{career.description}}
                         </div>
-                        <div class="lower-content">
-                            <h3><a href="{% url 'blogs:blogs' %}">OUR BLOGS</a></h3>
-                            <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                          </div>
-                    </div>
+                    <div class="post-info">
+                           {{career.location}} , {{career.governorate}} &ensp;|&ensp; {{career.posted|date:'d M o'}}  &ensp;
+                          <a href="{% url 'careers:career_detail' career.id %}" class="reply-btn" style="font-weight: bold;">Read more</a>
+                    </div> <br><hr style="border: 2px solid ;
+                    border-radius: 5px;">
+                    {% endfor %}
+                  </div>
+                    
+                   
+                  
                 </div>
-                
-                
+              </div>
             </div>
-            
+            <!--Right Column-->
+          </div>
         </div>
-    </section>
-
-   
-
-
+      </section>
       <!-- Main Footer -->
-       <footer class="main-footer">
+        <footer class="main-footer">
         <div class="auto-container">
           <!--Widgets Section-->
           <div class="widgets-section">
@@ -266,9 +248,8 @@
                   <div class="widget-content">
                     <div class="footer-logo">
                       <a href="{% url 'jobs:index' %}"
-                        >{% for i in data %}
-                        <img src="{{i.image_footer_logo_stories_and_blogs}}" style="height:80px; width:170px;" alt="">
-                        {% endfor %}</a>
+                        ><img src="images/footer-logo.png" alt=""
+                      /></a>
                     </div>
                     <div class="text">
                       Alit usmod tempor incididunt laboret quis arud
@@ -379,6 +360,7 @@
       <span class="flaticon-up-arrow"></span>
     </div>
 
+
     <script src="{% static 'careers/js/jquery.js' %}"></script>
     <script src="{% static 'careers/js/popper.min.js' %}"></script>
     <script src="{% static 'careers/js/bootstrap.min.js' %}"></script>
@@ -393,4 +375,5 @@
     <script src="{% static 'careers/js/paroller.js' %}"></script>
     <script src="{% static 'careers/js/custom-script.js' %}"></script>
   </body>
-</html>
+  
+  </html>
