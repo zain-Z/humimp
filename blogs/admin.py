@@ -3,35 +3,19 @@ from .models import Blog, Story, StoryAndBlog, Team, StoriesDetail
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_blogs',
-                    'image_blogs_right',
-                    'image_blogs_middle',
-                    'image_blogs_left',
-                    'image_blogs_one',
-                    'image_blogs_two',
-                    'image_blogs_three',
-                    'image_blogs_four',
-                    'image_blogs_five',
-                    'image_blogs_sex',
-                    'image_blogs_seven',
-                    'image_blogs_eight',
-                    'image_footer_logo_blogs',
-                    'image_header_logo_sticky_blogs',
+    list_display = ['blogs_image',
+                    'blogs_date',
+                    'blogs_desc',
+                    'blogs_location',
                     ]
 
 
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_story',
-                    'image_story_one',
-                    'image_story_two',
-                    'image_story_three',
-                    'image_story_four',
-                    'image_story_five',
-                    'image_story_sex',
-                    'image_story_seven',
-                    'image_story_eight',
-                    'image_footer_logo_story',
-                    'image_header_logo_sticky_story',
+    list_display = ['stories_image',
+                    'stories_date',
+                    'stories_location',
+                    'stories_name',
+
                     ]
 
 
@@ -45,17 +29,27 @@ class StoryAndBlogAdmin(admin.ModelAdmin):
 
 
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_team',
-                    'image_team_right',
-                    'image_team_middle',
-                    'image_team_left',
-                    'image_footer_logo_team',
-                    'image_header_logo_sticky_team',
+    list_display = ['teams_image',
+                    'teams_name',
+                    'teams_desc',
                     ]
 
 
 class StoriesDetailAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_stories_detail',
+    list_display = ['stories_details_image1',
+                    'stories_details_image2',
+                    'stories_details_image3',
+                    'stories_details_date',
+                    'stories_details_location',
+                    'stories_details_name',
+                    'stories_details_desc1',
+                    'stories_details_desc2',
+                    'stories_details_desc3',
+                    'stories_details_desc4',
+                    'stories_details_desc5',
+                    'stories_details_desc6',
+                    'stories_details_desc7',
+                    'image_bg_stories_detail',
                     'image_stories_detail_right',
                     'image_stories_detail_middle',
                     'image_stories_detail_left',

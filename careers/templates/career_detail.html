@@ -41,7 +41,7 @@
             <div class="logo-box">
               <div class="logo">
                 <a href="{% url 'jobs:index' %}" title="Ashor Iraqi Foundation for Relief and Development"><img
-                    src="images/logo.jpg" alt="Ashor Iraqi Foundation for Relief and Development" /></a>
+                  src="{% static 'careers/images/logo.jpg' %}" alt="Ashor Iraqi Foundation for Relief and Development" /></a>
               </div>
             </div>
 
@@ -106,7 +106,10 @@
         <div class="auto-container clearfix">
           <!--Logo-->
           <div class="logo pull-left">
-            <a href="{% url 'jobs:index' %}" title=""><img src="images/sticky-logo.png" alt="" title="" /></a>
+            <a href="{% url 'jobs:index' %}" title="">
+              {% for i in data %}
+              <img src="{{i.image_header_logo_sticky_career_detail_image}}" style="height:139px; width:50px;" alt="">
+              {% endfor %}</a>
           </div>
           <!--Right Col-->
           <div class="pull-right">
@@ -162,8 +165,11 @@
 
     <!-- Page Banner Section -->
     <section class="page-banner">
-      <div class="image-layer" style="background-image: url({{career.image_career_details}})"></div>
-
+    
+      <div class="image-layer" style="background-image: url({{career.image_career_details.url}});
+          width:1920px;
+          height:350px;"></div>
+   
       <div class="auto-container">
         <h1>{{career}}</h1>
       </div>
@@ -373,7 +379,9 @@
               <div class="footer-widget logo-widget">
                 <div class="widget-content">
                   <div class="footer-logo">
-                    <a href="{% url 'jobs:index' %}"><img src="images/footer-logo.png" alt="" /></a>
+                    <a href="{% url 'jobs:index' %}">{% for i in data %}
+                      <img src="{{i.image_footer_logo_career_detail_image}}" style="height:170px; width:80px;" alt="">
+                      {% endfor %}</a>
                   </div>
                   <div class="text">
                     Alit usmod tempor incididunt laboret quis arud

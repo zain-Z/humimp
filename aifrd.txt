@@ -1,0 +1,50 @@
+blogs app:
+
+1) what i did :
+- changed all the templates like yours and fixed paths and urls
+- changed models ( added your new models to the old models ) 
+- changed serializers
+- changed admin list display
+
+2) notice :
+-you didn't do anything with storiesAndBlogs.html
+
+-------------------------------------------------------------------------------------------
+
+jobs app:
+
+1) what i did :
+- changed all the templates like yours and fixed paths and urls
+- changed models ( added your new models to the old models ) 
+- changed serializers
+- changed admin list display
+
+2) notice :
+-added vission.html and contact.html to templates
+-in each template i added image background because you didn't add the most of them
+-didn't take care of any imports ( it's up to you )
+-didn't run the code or see if it it does work or not because i don't want to fix anything ( waiting for you until you finish what all you had started so i can work clean without deleting my work and do efforts in garbage and then i found that you wanted me to do something else )
+-there are some things i couldn't make a decision with:-(because i know you will change it or delete it later):-
+  1- in what_we_are_doing_details.html ( line 108 images/  , line 107 data-src= images/ ) you have to change them to smth like {{i.your_var_name}}
+  2- vision-mission-value.html ( line 7 ) 
+  3- index.html ( line 129 ) you have slide pictures so i don't know what to do with it , ( line 216 )
+  4- teams.html ( line 7 )
+  5- stories.html ( line 7 )
+  6- stories_detail.html ( line 7 )
+-didn't do anything for contact.html
+-don't forget what i had said about applicantslist.html
+***** maybe there are more things that i didn't notice ******
+
+--------------------------------------------------------------------------------------------
+
+warnings:
+-didn't make views for vision
+-if you are goint to call an image like this {{var_name_image}} .. you have to add ".url" so it will be like this {{var_name_image.url}}
+-if you are goint to call an image like this {{i.var_name_image}} .. don't write url in the end
+-in all your templates .. add t to about because it's like that "abou" in the footer
+
+---------------------------------------------------------------------------------------------
+
+last but not least .. i am mad at you and the code is running good and everything is fine but
+continue what you had started then i will continue because i don't want any wasting time anymore
+and i want to work clean without watching my efforts being thrown in the garbage

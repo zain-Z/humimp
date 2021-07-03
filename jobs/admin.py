@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .models import VisionMissionValue, Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
 
 
 class ApplicationAdmin(admin.ModelAdmin):
@@ -30,8 +30,27 @@ class GetInvolvedAdmin(admin.ModelAdmin):
                     ]
 
 
+class VisionMissionValueAdmin(admin.ModelAdmin):
+    list_display = ['Vission_Mission_Value_desc1',
+                    'Vission_Mission_Value_desc2',
+                    'vission_text',
+                    'mission_text',
+                    'value_text',
+                    ]
+
+
 class WhoWeAreAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_who_we_are',
+    list_display = ['WhoWeAre_image1',
+                    'WhoWeAre_image2',
+                    'WhoWeAre_image3',
+                    'WhoWeAre_desc1',
+                    'WhoWeAre_desc2',
+                    'WhoWeAre_desc3',
+                    'WhoWeAre_desc4',
+                    'WhoWeAre_desc5',
+                    'WhoWeAre_desc6',
+                    'WhoWeAre_desc7',
+                    'image_bg_who_we_are',
                     'image_left_who_we_are',
                     'image_middle_who_we_are',
                     'image_right_who_we_are',
@@ -56,7 +75,10 @@ class AboutAdmin(admin.ModelAdmin):
 
 
 class IndexAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_index_one',
+    list_display = ['slide_image_index',
+                    'slide_title_index',
+                    'slide_subtitle_index',
+                    'image_bg_index_one',
                     'image_bg_index_two',
                     'image_bg_index_three',
                     'index_animals',
@@ -70,7 +92,19 @@ class IndexAdmin(admin.ModelAdmin):
 
 
 class WhatWeAreDoingDetailsAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_what_we_are_doing_details',
+    list_display = ['WhatWeAreDoing_details_image_gallery',
+                    'WhatWeAreDoing_details_image1',
+                    'WhatWeAreDoing_details_image2',
+                    'WhatWeAreDoing_details_image3',
+                    'WhatWeAreDoing_details_name',
+                    'WhatWeAreDoing_details_desc1',
+                    'WhatWeAreDoing_details_desc2',
+                    'WhatWeAreDoing_details_desc3',
+                    'WhatWeAreDoing_details_desc4',
+                    'WhatWeAreDoing_details_desc5',
+                    'WhatWeAreDoing_details_desc6',
+                    'WhatWeAreDoing_details_desc7',
+                    'image_bg_what_we_are_doing_details',
                     'image_what_we_are_doing_details_right',
                     'image_what_we_are_doing_details_middle',
                     'image_what_we_are_doing_details_left',

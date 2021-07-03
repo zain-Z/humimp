@@ -1,10 +1,10 @@
 from django.shortcuts import redirect, render
-from .models import CareerDetail
+from .models import CareerDetail, CareerList, CareerDetatilImage
 from django.core.paginator import Paginator
 from .form import CareerDetailForm
 from django.urls import reverse
 from django.http import HttpRequest
-from .serializers import CareerDetailSerializer
+from .serializers import CareerDetailSerializer, CareerListSerializer, CareerDetatilImageSerializer
 from .filters import CareerDetailFilter
 
 # Create your views here.
@@ -13,8 +13,8 @@ from .filters import CareerDetailFilter
 def career_list(request):
     career_list = CareerDetail.objects.all()
     assert isinstance(request, HttpRequest)
-    queryset = CareerDetail.objects.all()
-    serializer_class = CareerDetailSerializer(queryset, many=True)
+    queryset = CareerList.objects.all()
+    serializer_class = CareerListSerializer(queryset, many=True)
 
     # filters
     myfilter = CareerDetailFilter(request.GET, queryset=career_list)
@@ -25,7 +25,8 @@ def career_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    context = {'careers': page_obj, 'myfilter': myfilter}  # template name
+    context = {'careers': page_obj, 'myfilter': myfilter,
+               'data': serializer_class.data}  # template name
 
     return render(request, 'career_list.html', context)
 
@@ -33,8 +34,8 @@ def career_list(request):
 def career_detail(request, id):
     career_detail = CareerDetail.objects.get(id=id)
     assert isinstance(request, HttpRequest)
-    queryset = CareerDetail.objects.all()
-    serializer_class = CareerDetailSerializer(queryset, many=True)
+    queryset = CareerDetatilImage.objects.all()
+    serializer_class = CareerDetatilImageSerializer(queryset, many=True)
 
-    context = {'career': career_detail}
+    context = {'career': career_detail, 'data': serializer_class.data}
     return render(request, 'career_detail.html', context)

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block body %}
+      <!-- Page Banner Section -->
+      <section class="page-banner">
+        <div
+          class="image-layer"
+          style="background-image: url(images/background/bg-page-title-2.jpg)"
+        ></div>
+
+        <div class="auto-container">
+          <h1>Vision & Mission and Value</h1>
+        </div>
+
+        <div class="breadcrumb-box">
+          <div class="auto-container">
+            <ul class="bread-crumb clearfix">
+              <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+             <li><a href="about.html">ABOUT AIFRD</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Banner Section -->
+    <!--Causes Section-->
+    <section class="career-section-two alternate-two" >
+      <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Content Side / Blog Detail-->
+                <div class="content-side ">
+                    <div class="post-details">
+                        <!--Blog Details-->
+                        <div class="blog-details">
+                          
+                            <div class="lower-box">
+                                <div class="info-box clearfix">
+                                   
+                                </div>
+                                <div class="post-content">
+                                 
+                                     <div class="row clearfix">
+                                        <div class="column col-md-6 col-sm-12" style="padding-top: 10px;">
+<p class="big-text">Vission & Mission and Value</p>
+                                                                       <p>{{Vission_Mission_Value_desc1}}</p>
+
+                                                                       <p>{{Vission_Mission_Value_desc2}}</p>                                                                            </div>
+                                        <div class="column col-md-6 col-sm-12">
+                                            <div class="inner">
+                                                <!--Accordion-->
+                                                <div class="accordion-box">
+                                                    <!--Block-->
+                                                    <div class="accordion block current wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                                        <div class="acc-btn active">Our Vission <div class="icon flaticon-cross"></div></div>
+                                                        <div class="acc-content">
+                                                            <div class="content">
+                                                                <div class="text">{{vission_text}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+
+                                                    <!--Block-->
+                                                    <div class="accordion block wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                                        <div class="acc-btn">Our mission  <div class="icon flaticon-cross"></div></div>
+                                                        <div class="acc-content">
+                                                            <div class="content">
+                                                                <div class="text">{{mission_text}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--Block-->
+                                                    <div class="accordion block wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                                        <div class="acc-btn">Our Value<div class="icon flaticon-cross"></div></div>
+                                                        <div class="acc-content">
+                                                            <div class="content">
+                                                                <div class="text">{{value_text}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--End Accordion-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+
+                     
+
+                    </div>
+
+                </div>
+                <!--End Content Side-->
+
+                <!--Sidebar Side-->
+                
+                <!--End Sidebar Side-->
+            </div>
+        </div>
+    </section>
+    {% endblock body %} 

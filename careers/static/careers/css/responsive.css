@@ -2,6 +2,11 @@
 	.page-wrapper{
 		overflow: hidden;
 	}
+	.about-section-four .image-column img{
+		display: block;
+	
+		border-radius: 5px;
+	}
 	
 }
 
@@ -14,16 +19,16 @@
 		margin-bottom: 50px;
 	}
 
-	.how-we-help .news-column .inner{
+	.how-we-help .career-column .inner{
 		padding: 50px 20px 50px 50px;
 		margin-right: 0;
 	}
 
-	.how-we-help .news-post{
+	.how-we-help .career-post{
 		margin-bottom: 40px;
 	}
 
-	.how-we-help .news-post h3{
+	.how-we-help .career-post h3{
 		font-size: 20px;
 		line-height: 1.3em;
 	}
@@ -33,22 +38,32 @@
 	.page-banner h1{
 		font-size: 64px;
 	}
+	.career-section .career-block-two{
+		padding-top: 10px;
+		padding-right: 20px;
+		padding-left: 20px;
+
+	}
 }
 
 @media only screen and (max-width: 1139px){
 	.main-menu .navigation > li{
 		margin-left: 30px;
 	}
-
+	
 	.how-we-help{
 		padding-bottom: 110px;
 	}
 
-	.how-we-help .news-column .inner{
+	.how-we-help .career-column .inner{
 		margin-top: 0;
 	}
+	.donate-link .btn-style-one .btn-title
+ {
+	margin-top:  4px;
+ }
 
-	.how-we-help .news-column .inner:before{
+	.how-we-help .career-column .inner:before{
 		width: 100%;
 		height: 100%;
 		border-radius: 5px;
@@ -84,10 +99,10 @@
 	.sec-title h2,
 	.testimonial-section .sec-title h2,
 	.fun-facts-two .text-column h2,
-	.news-section .sec-title h2,
+	.career-section .sec-title h2,
 	.default-section .text-column h2,
 	.call-to-box h2{
-		font-size: 42px;
+		font-size: 32px;
 	}
 
 	.call-to-box-two h3{
@@ -149,7 +164,7 @@
 		padding: 50px 30px 10px;
 	}
 
-	.event-block-two h3{
+	.story-block-two h3{
 		font-size: 20px;
 	}
 
@@ -169,8 +184,8 @@
 	.sidebar-widget .widget-inner{
 		padding: 40px 30px;
 	}
-
-	.news-block-two h2{
+   
+	.career-block-two h2{
 		font-size: 26px;
 	}
 
@@ -223,12 +238,18 @@
 		padding-right: 0;
 	}
 
-	.news-section-two .right-column .inner{
+	.career-section-two .right-column .inner{
 		padding-left: 0;
 	}
 
 	.service-block .inner-box{
 		padding: 50px 20px;
+	}
+	.career-section,.career-section-two
+	{
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 
 	.style-three .banner-carousel .content-box .inner{
@@ -237,6 +258,21 @@
 }
 
 @media only screen and (min-width: 768px){
+	.main-header .header-upper .logo img{
+		position: relative;
+		display: inline-block;
+   	 padding: 15px 0px;
+
+		max-width: 100%;
+		max-height: 80px;
+		z-index:1;
+	}
+	.career-section,.career-section-two
+	{
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 	.main-menu .navigation > li > ul,
 	.main-menu .navigation > li > ul > li > ul{
 		display:block !important;
@@ -249,6 +285,21 @@
 	.main-header.header-style-two{
 		position: relative;
 		background: #2f3753;
+	}
+	.main-header .header-upper .logo img{
+		position: relative;
+		display: inline-block;
+   	 padding: 15px 0px;
+
+		max-width: 100%;
+		max-height: 80px;
+		z-index:1;
+	}
+	.career-section,.career-section-two
+	{
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 
 	.main-header .nav-outer .main-menu,
@@ -450,10 +501,16 @@
 		margin-left: -100px;
 	}
 
-	.news-block h3{
+	.career-block h3{
 		font-size: 20px;
 	}
-
+	.blog-block h3{
+		font-size: 20px;
+	}
+	.donate-link .btn-style-one .btn-title
+	{
+	   margin-top:  4px;
+	}
 	.testimonial-block-two .inner{
 		padding-left: 0;
 	}
@@ -462,13 +519,16 @@
 		padding-right: 0;
 	}
 
-	.news-section .title-column,
-	.news-section .link-column{
+	.career-section .title-column,
+	.career-section .link-column{
 		width: 100%;
 		text-align: center;
 	}
+	
+	
 
-	.news-section .link-column .link-box{
+
+	.career-section .link-column .link-box{
 		padding-top: 0;
 		width: 100%;
 		text-align: center;
@@ -488,7 +548,7 @@
 
 	.cause-details h2,
 	.blog-details h2,
-	.event-details h2,
+	.story-details h2,
 	.sidebar-page-container .group-title h2{
 		font-size: 30px;
 	}
@@ -535,7 +595,10 @@
 		text-align: center;
 		height: auto;
 	}
-
+	.donate-link .btn-style-one .btn-title
+	{
+	   margin-top:  2px;
+	}
 	.adopt-child .carousel-box .owl-nav .owl-next,
 	.adopt-child .carousel-box .owl-nav .owl-prev{
 		position: relative;
@@ -555,7 +618,10 @@
 	.about-section{
 		padding: 70px 0px 30px;
 	}
-
+	.donate-link .btn-style-one .btn-title
+	{
+	   margin-top:  2px;
+	}
 	.causes-section,
 	.fun-facts-two{
 		padding: 70px 0px 0px;
@@ -587,19 +653,24 @@
 	.contact-section,
 	.coming-events,
 	.testimonials-two,
-	.news-section,
-	.about-section-four,
+
 	.activity-section,
-	.news-section-two,
+	
 	.call-to-box-two,
 	.sponsors-section,
 	.bottom-info-box,
 	.faq-section,
 	.causes-section.causes-page,
-	.events-section{
-		padding: 70px 0px;
+	.stories-section{
+		padding: 10px 0px;
 	}
-
+	
+	.career-section,.career-section-two
+	{
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 	.call-to-action,
 	.about-section-three,
 	.contact-section.contact-page{
@@ -614,7 +685,7 @@
 	.gallery-section,
 	.sponsors-two,
 	.message-section,
-	.what-we-do,
+
 	.default-section{
 		padding: 70px 0px 50px;
 	}
@@ -623,7 +694,7 @@
 		max-width: 480px;
 	}
 
-	.news-section .sponsors-outer{
+	.career-section .sponsors-outer{
 		padding-top: 50px;
 	}
 
@@ -649,7 +720,14 @@
 	.main-header .header-top .top-right{
 		display: none;
 	}
-
+	.donate-link .btn-style-one .btn-title
+	{
+	   margin-top:  2px;
+	}
+	.career-section{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 	.main-header .header-top .top-left,
 	.main-header .header-top .info{
 		width: 100%;
@@ -697,7 +775,7 @@
 	.sec-title h2,
 	.testimonial-section .sec-title h2,
 	.fun-facts-two .text-column h2,
-	.news-section .sec-title h2,
+	.career-section .sec-title h2,
 	.default-section .text-column h2,
 	.cause-details h2,
 	.call-to-box-two h2,
@@ -719,12 +797,12 @@
 		font-size: 18px;
 	}
 
-	.how-we-help .news-column .inner{
+	.how-we-help .career-column .inner{
 		padding: 30px 20px;
 	}
 
-	.how-we-help .news-post,
-	.news-section-two .left-column .news-post{
+	.how-we-help .career-post,
+	.career-section-two .left-column .career-post{
 		padding-top: 0;
 	}
 
@@ -785,13 +863,13 @@
 	}
 
 	.cause-details .info-box .cause-info,
-	.event-details .info-box .link-box{
+	.story-details .info-box .link-box{
 		width: 100%;
 		margin-bottom: 20px;
 	}
 
 	.cause-details .info-box .link-box,
-	.event-details .info-box .share-post{
+	.story-details .info-box .share-post{
 		width: 100%;
 	}
 
@@ -811,34 +889,34 @@
 		margin: 0 auto 25px;
 	}
 
-	.event-detail-image .time-countdown .counter-column{
+	.story-detail-image .time-countdown .counter-column{
 		margin: 0px 10px 20px;
 	}
 
-	.news-block-two h2{
+	.career-block-two h2{
 		font-size: 24px;
 	}
 
-	.news-block-two .bottom-box .post-meta{
+	.career-block-two .bottom-box .post-meta{
 		width: 100%;
 		margin-bottom: 30px;
 	}
 
-	.news-block-two .bottom-box .link-box{
+	.career-block-two .bottom-box .link-box{
 		width: 100%;
 	}
 
-	.news-block-three .inner-box{
+	.career-block-three .inner-box{
 		padding: 40px 50px 50px 20px;
 	}
 
-	.news-block-three .inner-box:before{
+	.career-block-three .inner-box:before{
 		right: 20px;
 		bottom: 20px;
 		font-size: 24px;
 	}
 
-	.news-block-three .inner-box .text{
+	.career-block-three .inner-box .text{
 		font-size: 18px;
 	}
 
@@ -873,6 +951,11 @@
 	.style-two.home-four .banner-carousel .content-box h2{
 		font-size: 36px;
 	}
+	.career-section{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
 
 	.about-section .left-column .lower-box .image{
 		width: 100%;
@@ -916,11 +999,11 @@
 		margin-left: -50px;
 	}
 
-	.event-block-two .lower-box{
+	.story-block-two .lower-box{
 		margin-left: 0;
 	}
 
-	.event-block-two .date{
+	.story-block-two .date{
 		position: relative;
 		left: 0;
 		top: 0;
@@ -928,7 +1011,7 @@
 		text-align: left;
 	}
 
-	.event-block-two .date br{
+	.story-block-two .date br{
 		display: none;
 	}
 
@@ -990,7 +1073,7 @@
 
 	.cause-details h2,
 	.blog-details h2,
-	.event-details h2,
+	.story-details h2,
 	.sidebar-page-container .group-title h2{
 		font-size: 26px;
 	}
@@ -1003,19 +1086,19 @@
 		font-size: 22px;
 	}
 
-	.news-block-two h2{
+	.career-block-two h2{
 		font-size: 22px;
 	}
 
-	.news-block-three .inner-box{
+	.career-block-three .inner-box{
 		padding-right: 20px;
 	}
 
-	.news-block-three .inner-box:before{
+	.career-block-three .inner-box:before{
 		display: none;
 	}
 
-	.news-block-two .image-box .date-box,
+	.career-block-two .image-box .date-box,
 	.blog-details .image-box .date-box{
 		left: 20px;
 		bottom: 20px;
@@ -1023,7 +1106,7 @@
 		font-size: 20px;
 	}
 
-	.news-block-two .image-box .date-box span,
+	.career-block-two .image-box .date-box span,
 	.blog-details .image-box .date-box span{
 		font-size: 24px;
 	}
@@ -1040,7 +1123,7 @@
 		width: 50%;
 	}
 
-	.news-section-two .left-column .news-post h3{
+	.career-section-two .left-column .career-post h3{
 		font-size: 20px;
 	}
 }
@@ -1049,7 +1132,10 @@
 	.main-header .nav-outer .donate-link{
 		display: none;
 	}
-
+.career-section{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 	.banner-carousel .content-box h2,
 	.style-two.home-four .banner-carousel .content-box h2{
 		font-size: 30px;
@@ -1108,12 +1194,12 @@
 		text-align: center;
 	}
 
-	.how-we-help .news-post{
+	.how-we-help .career-post{
 		padding: 0;
 		text-align: center;
 	}
 
-	.how-we-help .news-post .post-thumb{
+	.how-we-help .career-post .post-thumb{
 		position: relative;
 		left: 0;
 		top: 0;
@@ -1122,12 +1208,12 @@
 		margin-bottom: 20px;
 	}
 
-	.news-section-two .left-column .news-post{
+	.career-section-two .left-column .career-post{
 		padding: 0;
 		text-align: center;
 	}
 
-	.news-section-two .left-column .news-post .post-thumb{
+	.career-section-two .left-column .career-post .post-thumb{
 		position: relative;
 		left: 0;
 		top: 0;
@@ -1136,11 +1222,11 @@
 		margin-bottom: 20px;
 	}
 
-	.news-section-two .left-column{
+	.career-section-two .left-column{
 		text-align: center;
 	}
 
-	.newsletter-form .form-group{
+	.career-form .form-group{
 		padding-right: 0;
 	}
 
