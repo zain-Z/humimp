@@ -7,7 +7,7 @@ blogs app:
 - changed admin list display
 
 2) notice :
--you didn't do anything with storiesAndBlogs.html
+-you didn't do anything with storiesAndBlogs.html ( in case you want to add smth )
 
 -------------------------------------------------------------------------------------------
 
@@ -21,7 +21,6 @@ jobs app:
 
 2) notice :
 -added vission.html and contact.html to templates
--in each template i added image background because you didn't add the most of them
 -didn't take care of any imports ( it's up to you )
 -didn't run the code or see if it it does work or not because i don't want to fix anything ( waiting for you until you finish what all you had started so i can work clean without deleting my work and do efforts in garbage and then i found that you wanted me to do something else )
 -there are some things i couldn't make a decision with:-(because i know you will change it or delete it later):-
@@ -39,12 +38,12 @@ jobs app:
 
 warnings:
 -didn't make views for vision
+-in each template we have to figure out a color for the background and don't forget to set width to 1920 and height to 320
 -if you are goint to call an image like this {{var_name_image}} .. you have to add ".url" so it will be like this {{var_name_image.url}}
 -if you are goint to call an image like this {{i.var_name_image}} .. don't write url in the end
 -in all your templates .. add t to about because it's like that "abou" in the footer
 
 ---------------------------------------------------------------------------------------------
 
-last but not least .. i am mad at you and the code is running good and everything is fine but
-continue what you had started then i will continue because i don't want any wasting time anymore
-and i want to work clean without watching my efforts being thrown in the garbage
+last but not least .. check viber .. if you forgot our sequence 
+
