@@ -24,7 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jobs/', include('jobs.urls', namespace='jobs')),
+    path('', include('jobs.urls', namespace='jobs')),
     path('blogs/', include('blogs.urls', namespace='blogs')),
     path('careers/', include('careers.urls', namespace='careers')),
 
