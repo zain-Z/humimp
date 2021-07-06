@@ -78,16 +78,6 @@ class IndexAdmin(admin.ModelAdmin):
     list_display = ['slide_image_index',
                     'slide_title_index',
                     'slide_subtitle_index',
-                    'image_bg_index_one',
-                    'image_bg_index_two',
-                    'image_bg_index_three',
-                    'index_animals',
-                    'image_index_stories_one',
-                    'image_index_stories_two',
-                    'image_index_stories_three',
-                    'image_index_stories_four',
-                    'image_footer_logo',
-                    'image_header_logo_sticky',
                     ]
 
 

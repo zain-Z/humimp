@@ -175,26 +175,6 @@ class Index(models.Model):
     slide_title_index = models.CharField(max_length=300, default='')
     slide_subtitle_index = models.CharField(max_length=300, default='')
 
-    image_bg_index_one = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_bg_index_two = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_bg_index_three = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    index_animals = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_index_stories_one = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_index_stories_two = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_index_stories_three = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_index_stories_four = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_footer_logo = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    image_header_logo_sticky = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
 
 
 class WhatWeAreDoingDetails(models.Model):

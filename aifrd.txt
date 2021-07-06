@@ -42,7 +42,7 @@ warnings:
 -if you are goint to call an image like this {{var_name_image}} .. you have to add ".url" so it will be like this {{var_name_image.url}}
 -if you are goint to call an image like this {{i.var_name_image}} .. don't write url in the end
 -in all your templates .. add t to about because it's like that "abou" in the footer
-
+- index.html (line 58 , 172 )
 ---------------------------------------------------------------------------------------------
 
 last but not least .. check viber .. if you forgot our sequence 
