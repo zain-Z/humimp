@@ -25,14 +25,18 @@ def career_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    context = {'careers': page_obj, 'myfilter': myfilter,
-               'data': serializer_class.data}  # template name
+    if career_list:
+        context = {'careers': page_obj, 'myfilter': myfilter,
+                   'data': serializer_class.data}  # template name
 
+    else:
+        context = {'message': "There are no jobs available at the moment."}
     return render(request, 'career_list.html', context)
 
 
 def career_detail(request, id):
     career_detail = CareerDetail.objects.get(id=id)
+
     assert isinstance(request, HttpRequest)
     queryset = CareerDetatilImage.objects.all()
     serializer_class = CareerDetatilImageSerializer(queryset, many=True)
