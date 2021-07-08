@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Blog, Story, StoryAndBlog, Team, StoriesDetail
+from .models import Blog, StoryList, StoryAndBlog, Team, StoriesDetail
 
 
 class BlogSerializer(serializers.ModelSerializer):
@@ -9,10 +9,10 @@ class BlogSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class StorySerializer(serializers.ModelSerializer):
+class StoryListSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Story
+        model = StoryList
         fields = '__all__'
 
 

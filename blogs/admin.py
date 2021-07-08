@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Story, StoryAndBlog, Team, StoriesDetail
+from .models import Blog, StoryList, StoryAndBlog, Team, StoriesDetail
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -10,7 +10,7 @@ class BlogAdmin(admin.ModelAdmin):
                     ]
 
 
-class StoryAdmin(admin.ModelAdmin):
+class StoryListAdmin(admin.ModelAdmin):
     list_display = ['stories_image',
                     'stories_date',
                     'stories_location',
@@ -35,10 +35,19 @@ class TeamAdmin(admin.ModelAdmin):
                     ]
 
 
+class StoryListAdmin(admin.ModelAdmin):
+    list_display = ['stories_image',
+                    'stories_date',
+                    'stories_location',
+                    'stories_name',
+
+                    ]
+
+
 class StoriesDetailAdmin(admin.ModelAdmin):
-    list_display = ['stories_details_image1',
-                    'stories_details_image2',
-                    'stories_details_image3',
+    list_display = ['stories_details_image_one',
+                    'stories_details_image_two',
+                    'stories_details_image_three',
                     'stories_details_date',
                     'stories_details_location',
                     'stories_details_name',
@@ -49,23 +58,19 @@ class StoriesDetailAdmin(admin.ModelAdmin):
                     'stories_details_desc5',
                     'stories_details_desc6',
                     'stories_details_desc7',
-                    'image_bg_stories_detail',
-                    'image_stories_detail_right',
-                    'image_stories_detail_middle',
-                    'image_stories_detail_left',
-                    'image_stories_detail_one',
-                    'image_stories_detail_two',
-                    'image_stories_detail_three',
-                    'image_stories_detail_four',
-                    'image_stories_detail_five',
-                    'image_stories_detail_sex',
-                    'image_footer_logo_stories_detail',
-                    'image_header_logo_sticky_stories_detail',
+
+                    # teaba
+                    'image_stories_detail_one_teaba',
+                    'image_stories_detail_two_teaba',
+                    'image_stories_detail_three_teaba',
+                    'image_stories_detail_four_teaba',
+                    'image_stories_detail_five_teaba',
+                    'image_stories_detail_sex_teaba',
                     ]
 
 
 admin.site.register(StoryAndBlog, StoryAndBlogAdmin)
-admin.site.register(Story, StoryAdmin)
+admin.site.register(StoryList, StoryListAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(StoriesDetail, StoriesDetailAdmin)
 admin.site.register(Blog, BlogAdmin)

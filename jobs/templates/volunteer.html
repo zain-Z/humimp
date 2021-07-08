@@ -29,7 +29,7 @@
           <!--Form Column-->
             <div class="form-column">
               <div class="default-form donate-form">
-                <form action="{% url 'jobs:applicantsList' %}">
+                <form action="{% url 'jobs:applicantsList' %}" method="GET" enctype="multipart/form-data">
                   <h3 style="padding-bottom: 40px">JOIN US AS VOLUNTEERS</h3>
                   <div class="row clearfix">
                     <div class="form-group col-md-6 col-sm-12">

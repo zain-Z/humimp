@@ -176,7 +176,6 @@ class Index(models.Model):
     slide_subtitle_index = models.CharField(max_length=300, default='')
 
 
-
 class WhatWeAreDoingDetails(models.Model):
     WhatWeAreDoing_details_image_gallery = models.FileField(
         validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
