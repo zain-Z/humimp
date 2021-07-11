@@ -30,64 +30,20 @@
               <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> The United Nations is the only voice that speaks for everyone on earth and the only place where all nations come together. Our challenges are so intertwined that we can only solve them together, with smart responses across countries, cultures and peoples. As our world grows more connected and threats more complex, the success of the UN is even more essential. That’s why the United Nations Foundation exists.</p>
 
            
-
+              <h3  style="color:#426E94;text-align:center; padding-top:70px;  background-color:white;">{{message}}</h3>
             <div class="row clearfix">
+              
                 <!--Service Block-->
                 <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms">
                     <div class="inner-box">
                         <div class="icon"><span class="flaticon-therapy"></span></div>
-                        <h3><a href="#">Social cohesion and peace building</a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="{% url 'jobs:what_we_are_doing_details' %}" class="theme-btn">Explore</a></div>
+                        {% for whatWeDo in whatWeDoss %}
+                        <h3><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}">{{whatWeDo.whatDoDetail_name}}</a></h3>
+                        <div class="text">{{whatWeDo.whatDoDetail_desc1}}</div>
+                        <div class="link-box"><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}" class="theme-btn">Explore</a></div>
                     </div>
                 </div>
-                <!--Service Block-->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="300ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-recycle-sign"></span></div>
-                        <h3><a href="#">
-EDUCATION IN CRISIS</a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="#" class="theme-btn">Explore</a></div>
-                    </div>
-                </div>
-                <!--Service Block-->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="600ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-forest"></span></div>
-                        <h3><a href="#">CHILD PROTECTION</a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="#" class="theme-btn">Explore</a></div>
-                    </div>
-                </div>
-                <!--Service Block-->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-windmill"></span></div>
-                        <h3><a href="#">
-GENDER EQUALITY</a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="#" class="theme-btn">Explore</a></div>
-                    </div>
-                </div>
-                <!--Service Block-->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="300ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-eco"></span></div>
-                        <h3><a href="#">Protect Animals</a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="#" class="theme-btn">Explore</a></div>
-                    </div>
-                </div>
-                <!--Service Block-->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="600ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-worldwide"></span></div>
-                        <h3><a href="#">SHELTER </a></h3>
-                        <div class="text">Auis nostrud exercitation ullam laboris aliquip exsed consequat duis aut psum dolore magna aliqua minim.</div>
-                        <div class="link-box"><a href="#" class="theme-btn">Explore</a></div>
-                    </div>
-                </div>
+               {% endfor %}
             </div>
         </div>
     </section>

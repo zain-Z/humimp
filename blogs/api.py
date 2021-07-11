@@ -9,7 +9,7 @@ from rest_framework import generics
 
 @api_view(['GET'])
 def stories_api(request):
-    all_jobs = StoryDetail.objects.all()
+    all_stories = StoryDetail.objects.all()
     data = StoryDetailSerializer(all_stories, many=True).data
     return Response({'data': data})
 

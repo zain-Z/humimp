@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from .models import Application,Slider, Contact,VisionMissionValue,  WhatWeAreDoing, Volunteer, WhoWeAre, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
-from .serializers import ApplicationSerializer,SliderSerializer, VisionMissionValueSerializer, ContactSerializer, WhoWeAreSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer, GetInvolvedSerializer
+from .models import Application, Slider, Contact, VisionMissionValue, Volunteer, WhoWeAre, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
+from .serializers import ApplicationSerializer, SliderSerializer, VisionMissionValueSerializer, ContactSerializer, WhoWeAreSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+from .filters import WhatWeAreDoingDetailFilter
+from .form import WhatWeAreDoingDetailForm
+from django.core.paginator import Paginator
 
 
 class ApplicationList(generics.ListCreateAPIView):
@@ -62,19 +65,6 @@ def applicantsList(request):
                   )
 
 
-def what_we_are_doing(request):
-    """Renders the what we are doing page."""
-    assert isinstance(request, HttpRequest)
-    queryset = WhatWeAreDoing.objects.all()
-    serializer_class = WhatWeAreDoingSerializer(queryset, many=True)
-
-    return render(request, 'what_we_are_doing.html',
-                  {
-                      'data': serializer_class.data,
-                  }
-                  )
-
-
 def volunteer(request):
     """Renders the create volunteer page."""
     assert isinstance(request, HttpRequest)
@@ -95,12 +85,12 @@ def index(request):
     serializer_class = IndexSerializer(queryset, many=True)
 
     slider_show = Slider.objects.all()[:4]
-    context= {
-                      'data': serializer_class.data,
-                      'slider_show': slider_show,
-                  }
-    return render(request, 'index.html',context
-                 
+    context = {
+        'data': serializer_class.data,
+        'slider_show': slider_show,
+    }
+    return render(request, 'index.html', context
+
                   )
 
 
@@ -129,29 +119,49 @@ def contact(request):
                   }
                   )
 
-def what_we_are_doing_details(request):
-    """Renders the create volunteer page."""
-    assert isinstance(request, HttpRequest)
-    queryset = WhatWeAreDoingDetails.objects.all()
-    serializer_class = WhatWeAreDoingDetailsSerializer(queryset, many=True)
 
-    return render(request, 'what_we_are_doing_details.html',
-                  {
-                      'data': serializer_class.data,
-                  }
-                  )
+def what_we_are_doing(request):
+    """Renders the create volunteer page."""
+    whatWeDo = WhatWeAreDoingDetail.objects.all()
+
+    # filters
+    myfilter = WhatWeAreDoingDetailFilter(request.GET, queryset=whatWeDo)
+    whatWeDo = myfilter.qs
+
+    # Show many contacts per page.
+    paginator = Paginator(whatWeDo, 10000000000000000)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    if whatWeDo:
+        context = {'whatWeDoss': page_obj,
+                   'myfilter': myfilter}  # template name
+
+    else:
+        context = {'message': "There are no WhatWeDo available at the moment."}
+    return render(request, 'what_we_are_doing.html', context)
+
+
+def what_we_are_doing_details(request, id):
+    """Renders the create volunteer page."""
+    whatWeDo = WhatWeAreDoingDetail.objects.get(id=id)
+
+    context = {'whatWeDo': whatWeDo}
+    return render(request, 'what_we_are_doing_details.html', context)
+
 
 def vision_mission_value(request):
     """Renders the create VisionMissionValue page."""
     assert isinstance(request, HttpRequest)
     queryset = VisionMissionValue.objects.all()
-    serializer_class = VisionMissionValueSerializer (queryset, many=True)
+    serializer_class = VisionMissionValueSerializer(queryset, many=True)
 
     return render(request, 'vision_mission_value.html',
                   {
                       'data': serializer_class.data,
                   }
                   )
+
 
 def about(request):
     """Renders the create volunteer page."""

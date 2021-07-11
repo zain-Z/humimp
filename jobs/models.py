@@ -72,8 +72,6 @@ class Application(models.Model):
         return (self.email)
 
 
-
-
 class VisionMissionValue(models.Model):
 
     Vission_Mission_Value_desc1 = models.CharField(max_length=300, default='')
@@ -85,17 +83,10 @@ class VisionMissionValue(models.Model):
     value_text = models.CharField(max_length=300, default='')
 
 
-class WhatWeAreDoing(models.Model):
-    image_bg_what_we_are_doing = models.FileField(
-        validators=[validate_image_extension], upload_to='background/whatwe/', null=True, blank=True)
-    image_header_logo_sticky_what_we_are_doing = models.FileField(
-        validators=[validate_image_extension], upload_to='background/whatwe/', null=True, blank=True)
-    image_footer_logo_what_we_are_doing = models.FileField(
-        validators=[validate_image_extension], upload_to='background/whatwe/', null=True, blank=True)
-
 class Contact(models.Model):
     email_contact = models.CharField(max_length=300, default='')
     phone_contact = models.CharField(max_length=300, default='')
+
 
 class Donate(models.Model):
     image_bg_donate = models.FileField(
@@ -106,6 +97,7 @@ class Donate(models.Model):
     location_donate = models.CharField(max_length=300, default='')
     email_donate = models.CharField(max_length=300, default='')
     phone_donate = models.CharField(max_length=300, default='')
+
 
 class Volunteer(models.Model):
     image_bg_volunteer = models.FileField(
@@ -149,14 +141,15 @@ class WhoWeAre(models.Model):
     WhoWeAre_desc7 = models.CharField(max_length=300, default='')
     image_bg_who_we_are = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-   
+
 
 class Slider(models.Model):
     slide_image_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
     slide_title_index = models.CharField(max_length=300, default='')
     slide_subtitle_index = models.CharField(max_length=300, default='')
-   
+
+
 class Index(models.Model):
     image_about_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
@@ -165,54 +158,29 @@ class Index(models.Model):
     image_story_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
     text_story_index = models.CharField(max_length=300, default='')
-   
 
 
-class WhatWeAreDoingDetails(models.Model):
-    WhatWeAreDoing_details_image_gallery = models.FileField(
-        validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
+class WhatWeAreDoingDetail(models.Model):
+    whatDoDetail_image_gallery = models.FileField(
+        validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
 
-    WhatWeAreDoing_details_image1 = models.FileField(
-        validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
-    WhatWeAreDoing_details_image2 = models.FileField(
-        validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
-    WhatWeAreDoing_details_image3 = models.FileField(
-        validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
+    whatDoDetail_image1 = models.FileField(
+        validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
+    whatDoDetail_image2 = models.FileField(
+        validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
+    whatDoDetail_image3 = models.FileField(
+        validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
 
-    WhatWeAreDoing_details_name = models.CharField(max_length=300, default='')
-    WhatWeAreDoing_details_desc1 = models.CharField(max_length=300, default='')
+    whatDoDetail_name = models.CharField(max_length=300, default='')
+    whatDoDetail_desc1 = models.CharField(max_length=300, default='')
 
-    WhatWeAreDoing_details_desc2 = models.CharField(max_length=300, default='')
+    whatDoDetail_desc2 = models.CharField(max_length=300, default='')
 
-    WhatWeAreDoing_details_desc3 = models.CharField(max_length=300, default='')
+    whatDoDetail_desc3 = models.CharField(max_length=300, default='')
 
-    WhatWeAreDoing_details_desc4 = models.CharField(max_length=300, default='')
-    WhatWeAreDoing_details_desc5 = models.CharField(max_length=300, default='')
+    whatDoDetail_desc4 = models.CharField(max_length=300, default='')
+    whatDoDetail_desc5 = models.CharField(max_length=300, default='')
 
-    WhatWeAreDoing_details_desc6 = models.CharField(max_length=300, default='')
+    whatDoDetail_desc6 = models.CharField(max_length=300, default='')
 
-    WhatWeAreDoing_details_desc7 = models.CharField(max_length=300, default='')
-    image_bg_what_we_are_doing_details = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_right = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_middle = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_left = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_one = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_two = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_three = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_four = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_five = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_what_we_are_doing_details_sex = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_footer_logo_what_we_are_doing_details = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
-    image_header_logo_sticky_what_we_are_doing_details = models.FileField(
-        validators=[validate_image_extension], upload_to='background/WhatWeDetails/', null=True, blank=True)
+    whatDoDetail_desc7 = models.CharField(max_length=300, default='')

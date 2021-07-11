@@ -1,18 +1,11 @@
 from jobs.serializers import SliderSerializer
 from django.contrib import admin
-from .models import Contact,Slider, VisionMissionValue, Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .models import Contact, Slider, VisionMissionValue, Application, WhoWeAre, Volunteer, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
 
 
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ['id', 'full_name', 'email', 'phone', 'region', 'address',
                     'gender', 'english', 'arabic', 'kurdish', 'cover_letter', 'upload_cv']
-
-
-class WhatWeAreDoingAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_what_we_are_doing',
-                    'image_header_logo_sticky_what_we_are_doing',
-                    'image_footer_logo_what_we_are_doing',
-                    ]
 
 
 class DonateAdmin(admin.ModelAdmin):
@@ -23,21 +16,24 @@ class DonateAdmin(admin.ModelAdmin):
                     'location_donate',
                     'email_donate',
                     'phone_donate',
-                   
+
                     ]
+
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['email_contact',
                     'phone_contact',
                     ]
 
+
 class GetInvolvedAdmin(admin.ModelAdmin):
     list_display = [
-                    'image_careers_getinvolved',
-                    'image_joinus_getinvolved',
-                    'text_careers_getinvolved',
-                    'text_joinus_getinvolved',
-                    ]
+        'image_careers_getinvolved',
+        'image_joinus_getinvolved',
+        'text_careers_getinvolved',
+        'text_joinus_getinvolved',
+    ]
+
 
 class WhoWeAreAdmin(admin.ModelAdmin):
     list_display = ['WhoWeAre_image1',
@@ -51,20 +47,20 @@ class WhoWeAreAdmin(admin.ModelAdmin):
                     'WhoWeAre_desc6',
                     'WhoWeAre_desc7',
                     'image_bg_who_we_are',
-                   
+
                     ]
 
 
 class VolunteerAdmin(admin.ModelAdmin):
     list_display = ['image_bg_volunteer',
-                    
+
                     ]
 
 
 class AboutAdmin(admin.ModelAdmin):
     list_display = ['text_about',
                     'image_middle_about',
-                    
+
                     ]
 
 
@@ -74,50 +70,42 @@ class VisionMissionValueAdmin(admin.ModelAdmin):
                     'vission_text',
                     'mission_text',
                     'value_text',
-        
+
                     ]
+
+
 class SliderAdmin(admin.ModelAdmin):
     list_display = ['slide_image_index',
                     'slide_title_index',
                     'slide_subtitle_index',
-                    
+
                     ]
+
 
 class IndexAdmin(admin.ModelAdmin):
     list_display = [
-                    'text_about_index',
-                    'image_about_index',
-                    'text_what_we_are_doing_index',
-                    'image_story_index',
-                    'text_story_index'
-                    ]
+        'text_about_index',
+        'image_about_index',
+        'text_what_we_are_doing_index',
+        'image_story_index',
+        'text_story_index'
+    ]
 
 
-class WhatWeAreDoingDetailsAdmin(admin.ModelAdmin):
-    list_display = ['WhatWeAreDoing_details_image_gallery',
-                    'WhatWeAreDoing_details_image1',
-                    'WhatWeAreDoing_details_image2',
-                    'WhatWeAreDoing_details_image3',
-                    'WhatWeAreDoing_details_name',
-                    'WhatWeAreDoing_details_desc1',
-                    'WhatWeAreDoing_details_desc2',
-                    'WhatWeAreDoing_details_desc3',
-                    'WhatWeAreDoing_details_desc4',
-                    'WhatWeAreDoing_details_desc5',
-                    'WhatWeAreDoing_details_desc6',
-                    'WhatWeAreDoing_details_desc7',
-                    'image_bg_what_we_are_doing_details',
-                    'image_what_we_are_doing_details_right',
-                    'image_what_we_are_doing_details_middle',
-                    'image_what_we_are_doing_details_left',
-                    'image_what_we_are_doing_details_one',
-                    'image_what_we_are_doing_details_two',
-                    'image_what_we_are_doing_details_three',
-                    'image_what_we_are_doing_details_four',
-                    'image_what_we_are_doing_details_five',
-                    'image_what_we_are_doing_details_sex',
-                    'image_footer_logo_what_we_are_doing_details',
-                    'image_header_logo_sticky_what_we_are_doing_details',
+class WhatWeAreDoingDetailAdmin(admin.ModelAdmin):
+    list_display = ['id',
+                    'whatDoDetail_image_gallery',
+                    'whatDoDetail_image1',
+                    'whatDoDetail_image2',
+                    'whatDoDetail_image3',
+                    'whatDoDetail_name',
+                    'whatDoDetail_desc1',
+                    'whatDoDetail_desc2',
+                    'whatDoDetail_desc3',
+                    'whatDoDetail_desc4',
+                    'whatDoDetail_desc5',
+                    'whatDoDetail_desc6',
+                    'whatDoDetail_desc7',
                     ]
 
 
@@ -132,5 +120,4 @@ admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(WhoWeAre, WhoWeAreAdmin)
 admin.site.register(VisionMissionValue, VisionMissionValueAdmin)
-admin.site.register(WhatWeAreDoing, WhatWeAreDoingAdmin)
-admin.site.register(WhatWeAreDoingDetails, WhatWeAreDoingDetailsAdmin)
+admin.site.register(WhatWeAreDoingDetail, WhatWeAreDoingDetailAdmin)
