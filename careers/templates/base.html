@@ -15,10 +15,7 @@
   <!-- Responsive Settings -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <!--[if lt IE 9
-      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
-    ><![endif]-->
-  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  
 </head>
 
 <body>
@@ -62,7 +59,7 @@
                                         <ul>
                                           <li><a href="{% url 'jobs:who_we_are' %}">WHO WE ARE </a></li>
                                           <li><a href="{% url 'blogs:teams' %}">OUR TEAMS</a></li>
-                                            <li><a href="vision-mission-value.html">VISION & MISSION & VALUES</a></li>
+                                            <li><a href="{% url 'jobs:vision_mission_value' %}">VISION & MISSION & VALUES</a></li>
                                         </ul>
                                     </li>
                                    
@@ -81,6 +78,7 @@
                                         <li><a href="{% url 'jobs:volunteer' %}">JOIN US AS VOLUNTEERS</a></li>
                                       </ul>
                                     </li>
+                                    <li><a href="{% url 'jobs:contact' %}">CONTACT</a></li>
                                     <li><a href="{% url 'jobs:what_we_are_doing' %}">العربية</a></li>
                                     
                                 </ul>
@@ -106,7 +104,8 @@
             <!--Logo-->
             <div class="logo pull-left">
               <a href="{% url 'jobs:index' %}"  title=""
-                ><img src="{% static 'careers/images/logo.jpg' %}" alt="" title="" width="80px" height="30px"
+                ><img src="{% static 'careers/images/logo.jpg' %}" alt="" title="" 
+                style="height:50px; width:60px;"
               /></a>
             </div>
             <!--Right Col-->
@@ -181,19 +180,11 @@
                     consequat duis aute rue dolor prehendrit lorem esse cillum
                     dolore eu fugiat nulla.
                   </div>
-                  <ul class="social-links clearfix">
-                    <li>
-                      <a href="#"><span class="fab fa-facebook-f"></span></a>
-                    </li>
-                    <li>
-                      <a href="#"><span class="fab fa-twitter"></span></a>
-                    </li>
-
-                    <li>
-                      <a href="#"><span class="fab fa-instagram"></span></a>
-                    </li>
-
-                  </ul>
+                  <ul class="social-links clearfix">  {% for i in data %}
+                    <li><a href="{{i.facebook_link}}"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="{{i.twitter_link}}"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="{{i.instagram_link}}"><span class="fab fa-instagram"></span></a></li>
+                    {% endfor %} </ul >
                 </div>
               </div>
             </div>
@@ -208,7 +199,7 @@
                       <ul>
                         <li><a href="{% url 'jobs:who_we_are' %}">WHO WE ARE</a></li>
                         <li><a href="{% url 'blogs:teams' %}">OUR TEAM</a></li>
-                        <li><a href="vission-mission-value.html">VISION,MISSION & VALUE</a></li>
+                        <li><a href="{% url 'jobs:vision_mission_value' %}">VISION,MISSION & VALUE</a></li>
                       </ul>
                     </div>
                   </div>

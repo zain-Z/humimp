@@ -4,8 +4,7 @@ from .models import CareerDetail, CareerList, CareerDetatilImage
 
 class CareerListAdmin(admin.ModelAdmin):
     list_display = ['image_bg_career_list',
-                    'image_header_logo_sticky_career_list',
-                    'image_footer_logo_career_list',
+                   
                     ]
 
 

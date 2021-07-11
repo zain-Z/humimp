@@ -22,59 +22,32 @@ class Team(models.Model):
     teams_desc = models.CharField(max_length=300, default='')
 
 
-class StoryList(models.Model):
-    stories_image = models.FileField(
-        validators=[validate_image_extension], upload_to='background/story/', null=True, blank=True)
+class StoryDetail(models.Model):
 
-    stories_date = models.DateField(default=date.today)
-    stories_location = models.CharField(max_length=300, default='')
-    stories_name = models.CharField(max_length=300, default='')
-
-
-class StoriesDetail(models.Model):
-    stories_details_image_one = models.FileField(
+    story_image_one = models.FileField(
         validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    stories_details_image_two = models.FileField(
+    story_image_two = models.FileField(
         validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    stories_details_image_three = models.FileField(
+    story_image_three = models.FileField(
         validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
 
-    stories_details_date = models.DateField(default=date.today)
-    stories_details_location = models.CharField(max_length=300, default='')
-    stories_details_name = models.CharField(max_length=300, default='')
-    stories_details_desc1 = models.CharField(max_length=300, default='')
-    stories_details_desc2 = models.CharField(max_length=300, default='')
-    stories_details_desc3 = models.CharField(max_length=300, default='')
-    stories_details_desc4 = models.CharField(max_length=300, default='')
-    stories_details_desc5 = models.CharField(max_length=300, default='')
-    stories_details_desc6 = models.CharField(max_length=300, default='')
-    stories_details_desc7 = models.CharField(max_length=300, default='')
-
-    # teaba
-    image_stories_detail_one_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    image_stories_detail_two_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    image_stories_detail_three_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    image_stories_detail_four_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    image_stories_detail_five_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
-    image_stories_detail_sex_teaba = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_detail/', null=True, blank=True)
+    story_date = models.DateField(default=date.today)
+    story_location = models.CharField(max_length=300, default='')
+    story_name = models.CharField(max_length=300, default='')
+    story_desc1 = models.CharField(max_length=300, default='')
+    story_desc2 = models.CharField(max_length=300, default='')
+    story_desc3 = models.CharField(max_length=300, default='')
+    story_desc4 = models.CharField(max_length=300, default='')
+    story_desc5 = models.CharField(max_length=300, default='')
+    story_desc6 = models.CharField(max_length=300, default='')
+    story_desc7 = models.CharField(max_length=300, default='')
 
 
 class StoryAndBlog(models.Model):
-    image_bg_stories_and_blogs = models.FileField(
+    image_bg_stories = models.FileField(
         validators=[validate_image_extension], upload_to='background/stories_and_blogs/', null=True, blank=True)
+    text_bg_stories = models.CharField(max_length=300, default='')
 
-    image_stories_and_blogs_left = models.FileField(
+    image_bg_blogs = models.FileField(
         validators=[validate_image_extension], upload_to='background/stories_and_blogs/', null=True, blank=True)
-    image_stories_and_blogs_middle = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_and_blogs/', null=True, blank=True)
-
-    image_footer_logo_stories_and_blogs = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_and_blogs/', null=True, blank=True)
-    image_header_logo_sticky_stories_and_blogs = models.FileField(
-        validators=[validate_image_extension], upload_to='background/stories_and_blogs/', null=True, blank=True)
+    text_bg_blogs = models.CharField(max_length=300, default='')

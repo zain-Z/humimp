@@ -9,7 +9,7 @@
      ></div>
 
      <div class="auto-container">
-       <h1 style="font-size:35px"> {{ stories_details_name }} </h1>
+       <h1 style="font-size:35px"> {{ story.story_name }} </h1>
      </div>
 
      <div class="breadcrumb-box">
@@ -29,12 +29,12 @@
      <div class="auto-container">
       <div class="post-content">
                                    <div class="lower-box story-details">
-                             <h2 style="font-size:20px;padding-top:60px">{{ stories_details_name }}</h2>
+                             <h2 style="font-size:20px;padding-top:60px">{{  story.story_name  }}</h2>
                              <div class="info-box clearfix">
                                  <div class="cause-info">
                                      <ul class="clearfix">
-                                         <li><span class="far fa-clock"></span> {{ stories_details_date }}  </li>
-                                         <li><span class="fa fa-map-marker-alt"></span> {{stories_details_location}}</li>
+                                         <li><span class="far fa-clock"></span> {{ story.story_date|date:'d M o' }}  </li>
+                                         <li><span class="fa fa-map-marker-alt"></span> {{story.story_location}}</li>
                                      </ul>
                                  </div>
                                 
@@ -44,14 +44,14 @@
                          </div>
                               
             
-                                 <p> {{ stories_details_desc1 }}
+                                 <p> {{ story.story_desc1 }}
                                  </p>
-                                 <p>{{ stories_details_desc2 }}</p>
-                                 <p>{{ stories_details_desc3 }}</p>
+                                 <p>{{ story.story_desc2 }}</p>
+                                 <p>{{ story.story_desc3 }}</p>
                                  <div class="row clearfix">
                                     
                                  </div>
-                                 <p class="big-text">{{ stories_details_desc4 }}</p>
+                                 <p class="big-text">{{ story.story_desc4 }}</p>
                                 
                                   </div>
                      
@@ -60,7 +60,7 @@
              <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                  <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                      <div class="image-box">
-                         <figure class="image"><img src="{{ stories_details_image_one.url }}" alt=""></figure>
+                         <figure class="image"><img src="{{ story.story_image_one.url }}" alt=""></figure>
                          
                      </div>
                     
@@ -69,7 +69,7 @@
                 <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                  <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                      <div class="image-box">
-                         <figure class="image"><img src="{{ stories_details_image_two.url }}" alt=""></figure>
+                         <figure class="image"><img src="{{ story.story_image_two.url }}" alt=""></figure>
                          
                      </div>
                     
@@ -78,7 +78,7 @@
                 <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                  <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                      <div class="image-box">
-                         <figure class="image"><img src="{{ stories_details_image_three.url }}" alt=""></figure>
+                         <figure class="image"><img src="{{ story.story_image_three.url }}" alt=""></figure>
                          
                      </div>
                     
@@ -87,95 +87,17 @@
              
              
          </div>
-         <p>{{ stories_details_desc5 }}</p>
-         <p>{{ stories_details_desc6 }}</p>
+         <p>{{ story.story_desc5 }}</p>
+         <p>{{ story.story_desc6 }}</p>
                                  
 <div class="news-block-three">
                          <div class="inner-box">
-                             <div class="text">{{ stories_details_desc7 }}</div>
+                             <div class="text">{{ story.story_desc7 }}</div>
                          </div>
                      </div>
      
      </div>
  </section>
 
-
-
- <!-- Insta Gallery Section -->
- <section class="insta-gallery">
-     <div class="insta-gallery-carousel kausid-carousel owl-theme owl-carousel" data-options='{"loop": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 500, "responsive":{ "0" :{ "items": "1" },"600" :{ "items": "2" }, "768" :{ "items" : "3" }, "1024":{ "items" : "4" }, "1366":{ "items" : "4" }, "1500":{ "items" : "5" }, "1920":{ "items" : "6" }}}'>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">
-                   {% for i in data %}
-                   <img src="{{i.image_stories_detail_one_teaba}}" 
-                   data-src="{{i.image_stories_detail_one_teaba}}"
-                   style="height:350px; width:320px;" alt="">
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_one_teaba}}" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">                  
-                   <img src="{{i.image_stories_detail_two_teaba}}" 
-                   data-src="{{i.image_stories_detail_two_teaba}}"
-                   style="height:350px; width:320px;" alt="">                   
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_two_teaba}}" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">                    
-                   <img src="{{i.image_stories_detail_three_teaba}}" 
-                   data-src="{{i.image_stories_detail_three_teaba}}"
-                   style="height:350px; width:320px;" alt="">                   
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_three_teaba}}" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">                    
-                   <img src="{{i.image_stories_detail_four_teaba}}" 
-                   data-src="{{i.image_stories_detail_four_teaba}}"
-                   style="height:350px; width:320px;" alt="">                   
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_four_teaba}}" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">      
-                   <img src="{{i.image_stories_detail_five_teaba}}" 
-                   data-src="{{i.image_stories_detail_five_teaba}}"
-                   style="height:350px; width:320px;" alt="">
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_five_teaba}}" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         <!-- Gallery Item -->
-         <div class="gallery-item-two">
-             <div class="image-box">
-                 <figure class="image">
-                   <img src="{{i.image_stories_detail_sex_teaba}}" 
-                   data-src="{{i.image_stories_detail_sex_teaba}}"
-                   style="height:350px; width:320px;" alt="">
-                 </figure>
-                 <div class="overlay-box"><a href="{{i.image_stories_detail_sex_teaba}}" class="lightbox-image" data-fancybox="gallery-two">
-                 {% endfor %}
-                 <span class="icon flaticon-instagram"></span></a></div>
-             </div>
-         </div>
-         
-     </div>
- </section>
- <!--End Gallery Section -->
 
 {% endblock body %}

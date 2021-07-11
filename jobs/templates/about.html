@@ -41,15 +41,12 @@
                   We make ways to good things happen
                 </div>
               </div>
+               {% for i in data %}
               <div class="lower-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incids dunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam quis nostrud exercital tion
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore euy fugiat nulla pariatur. Excepteur sint
-                occaecat cupidatat non proident sunt in culpa.
+             {{i.text_about}}
               </div>
+              {% endfor %}
+
             </div>
           </div>
           <!--Image Column-->
@@ -78,7 +75,7 @@
                     ipsum.
                   </div>
                   <div class="link-box">
-                    <a href="#" class="more-link"
+                    <a href="{% url 'jobs:vision_mission_value' %}" class="more-link"
                       >Read More
                       <span
                         style="padding-top: 10px; padding-right: 10px"
@@ -103,7 +100,7 @@
                     ipsum.
                   </div>
                   <div class="link-box">
-                    <a href="#" class="more-link"
+                    <a href="{% url 'jobs:vision_mission_value' %}" class="more-link"
                       >Read More
                       <span
                         style="padding-top: 10px; padding-right: 10px"
@@ -128,7 +125,7 @@
                     ipsum.
                   </div>
                   <div class="link-box">
-                    <a href="#" class="more-link"
+                    <a href="{% url 'jobs:vision_mission_value' %}" class="more-link"
                       >Read More
                       <span
                         style="padding-top: 10px; padding-right: 10px"

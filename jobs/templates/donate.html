@@ -38,14 +38,15 @@
                         <div class="inner" >
                             <h3 >Keep touch with us</h3>
                             <ul class="info">
-                                <li><span class="fa fa-map-marker-alt"></span> Mousl/iraq</li>
-                                <li><span class="fa fa-phone-alt"></span> <a href="tel:+964 773 1476 198">Phone +964 773 1476 198</a></li>
-                                <li><span class="fa fa-envelope-open"></span> <a href="mailto:representative@aifrd.org">representative@aifrd.org</a></li>
-                            </ul> <ul class="social-links clearfix">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                            </ul >
+                              {% for i in data %}
+                                <li><span class="fa fa-map-marker-alt"></span> {{i.location_donate}}</li>
+                                <li><span class="fa fa-phone-alt"></span> <a href="tel:+964 773 1476 198">Phone +964 {{i.phone_donate}}</a></li>
+                                <li><span class="fa fa-envelope-open"></span> <a href="mailto:representative@aifrd.org">{{i.email_donate}}</a></li>
+                                {% endfor %}     </ul> 
+                               <div style="padding: 15px;">
+                                
+                               </div>
+                            
                         </div>
                     </div>
                     <!--Info Block-->

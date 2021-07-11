@@ -35,11 +35,7 @@ class CareerDetail(models.Model):
 class CareerList(models.Model):
     image_bg_career_list = models.FileField(
         validators=[validate_image_extension], upload_to='background/career_list/', null=True, blank=True)
-    image_header_logo_sticky_career_list = models.FileField(
-        validators=[validate_image_extension], upload_to='background/career_list/', null=True, blank=True)
-    image_footer_logo_career_list = models.FileField(
-        validators=[validate_image_extension], upload_to='background/career_list/', null=True, blank=True)
-
+  
 
 class CareerDetatilImage(models.Model):
 

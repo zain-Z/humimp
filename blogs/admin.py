@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, StoryList, StoryAndBlog, Team, StoriesDetail
+from .models import Blog, StoryAndBlog, Team, StoryDetail
 
 
 class BlogAdmin(admin.ModelAdmin):
@@ -10,21 +10,11 @@ class BlogAdmin(admin.ModelAdmin):
                     ]
 
 
-class StoryListAdmin(admin.ModelAdmin):
-    list_display = ['stories_image',
-                    'stories_date',
-                    'stories_location',
-                    'stories_name',
-
-                    ]
-
-
 class StoryAndBlogAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_stories_and_blogs',
-                    'image_stories_and_blogs_left',
-                    'image_stories_and_blogs_middle',
-                    'image_footer_logo_stories_and_blogs',
-                    'image_header_logo_sticky_stories_and_blogs',
+    list_display = ['image_bg_stories',
+                    'text_bg_stories',
+                    'image_bg_blogs',
+                    'text_bg_blogs',
                     ]
 
 
@@ -35,42 +25,25 @@ class TeamAdmin(admin.ModelAdmin):
                     ]
 
 
-class StoryListAdmin(admin.ModelAdmin):
-    list_display = ['stories_image',
-                    'stories_date',
-                    'stories_location',
-                    'stories_name',
-
-                    ]
-
-
-class StoriesDetailAdmin(admin.ModelAdmin):
-    list_display = ['stories_details_image_one',
-                    'stories_details_image_two',
-                    'stories_details_image_three',
-                    'stories_details_date',
-                    'stories_details_location',
-                    'stories_details_name',
-                    'stories_details_desc1',
-                    'stories_details_desc2',
-                    'stories_details_desc3',
-                    'stories_details_desc4',
-                    'stories_details_desc5',
-                    'stories_details_desc6',
-                    'stories_details_desc7',
-
-                    # teaba
-                    'image_stories_detail_one_teaba',
-                    'image_stories_detail_two_teaba',
-                    'image_stories_detail_three_teaba',
-                    'image_stories_detail_four_teaba',
-                    'image_stories_detail_five_teaba',
-                    'image_stories_detail_sex_teaba',
+class StoryDetailAdmin(admin.ModelAdmin):
+    list_display = ['id',
+                    'story_image_one',
+                    'story_image_two',
+                    'story_image_three',
+                    'story_date',
+                    'story_location',
+                    'story_name',
+                    'story_desc1',
+                    'story_desc2',
+                    'story_desc3',
+                    'story_desc4',
+                    'story_desc5',
+                    'story_desc6',
+                    'story_desc7',
                     ]
 
 
 admin.site.register(StoryAndBlog, StoryAndBlogAdmin)
-admin.site.register(StoryList, StoryListAdmin)
 admin.site.register(Team, TeamAdmin)
-admin.site.register(StoriesDetail, StoriesDetailAdmin)
+admin.site.register(StoryDetail, StoryDetailAdmin)
 admin.site.register(Blog, BlogAdmin)

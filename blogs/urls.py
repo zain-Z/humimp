@@ -19,8 +19,8 @@ urlpatterns = [
 
 
     # class based views
-    path('api/v2/stories', api.StoriesDetailListApi.as_view(),
-         name='StoriesDetailListApi'),
+    path('api/v2/stories', api.StoryDetailListApi.as_view(),
+         name='StoryDetailListApi'),
     path('api/v2/stories/<int:id>',
-         api.StoriesDetailDetail.as_view(), name='StoriesDetailDetail'),
+         api.StoryDetailDetail.as_view(), name='StoryDetailDetail'),
 ]

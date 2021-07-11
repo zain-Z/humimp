@@ -38,16 +38,17 @@
      <div class="row clearfix">
                                 
                                 </div>
+                                {% for i in data %}
      <div class="post-content">
                                
-                                <p>{{ WhoWeAre_desc1 }}
+                                <p>{{ i.WhoWeAre_desc1 }}
                                 </p>
-                                <p>{{ WhoWeAre_desc2 }}</p>
-                                <p>{{ WhoWeAre_desc3 }}</p>
+                                <p>{{ i.WhoWeAre_desc2 }}</p>
+                                <p>{{ i.WhoWeAre_desc3 }}</p>
                                 <div class="row clearfix">
                                    
                                 </div>
-                                <p class="big-text">{{ WhoWeAre_desc4 }}
+                                <p class="big-text">{{ i.WhoWeAre_desc4 }}
                                  </div>
                     
         <div class="row clearfix">
@@ -55,7 +56,7 @@
             <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                     <div class="image-box">
-                        <figure class="image"><img src="{{ WhoWeAre_image1.url }}"  alt=""></figure>
+                        <figure class="image"><img src="{{ i.WhoWeAre_image1 }}"  alt=""></figure>
                         
                     </div>
                    
@@ -64,7 +65,7 @@
                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                     <div class="image-box">
-                        <figure class="image"><img src="{{ WhoWeAre_image2.url }}"  alt=""></figure>
+                        <figure class="image"><img src="{{ i.WhoWeAre_image2 }}"  alt=""></figure>
                         
                     </div>
                    
@@ -73,7 +74,7 @@
                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
                     <div class="image-box">
-                        <figure class="image"><img src="{{ WhoWeAre_image3.url }}" alt=""></figure>
+                        <figure class="image"><img src="{{ i.WhoWeAre_image3 }}" alt=""></figure>
                         
                     </div>
                    
@@ -82,14 +83,14 @@
             
             
         </div>
-        <p>{{ WhoWeAre_desc5 }}</p>
-        <p>{{ WhoWeAre_desc6 }}</p>                                
+        <p>{{ i.WhoWeAre_desc5 }}</p>
+        <p>{{ i.WhoWeAre_desc6 }}</p>                                
 <div class="news-block-three">
                         <div class="inner-box">
-                            <div class="text">{{ WhoWeAre_desc7 }}</div>
+                            <div class="text">{{ i.WhoWeAre_desc7 }}</div>
                         </div>
                     </div>
     
-    </div>
+    </div>   {% endfor %}
 </section>
 {% endblock body %}

@@ -2,24 +2,25 @@
 {% block body %}
     <!-- Banner Section -->
     <section class="banner-section">
+     
       <div
         class="banner-carousel kausid-carousel owl-theme owl-carousel"
         data-options='{"loop": true, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "768" :{ "items" : "1" } , "1000":{ "items" : "1" }}}'
       >
-      {% for i in data %}
+      {% for slider in slider_show %}
         <!-- Slide Item -->
-        <div class="slide-item">
+        <div class="slide-item { % if forloop.counter0 == 0 %} active {% endif % }">
           <div
             class="image-layer"
-            style="background-image: url('{{i.slide_image_index}}')"
+            style="background-image: url('{{slider.slide_image_index.url}}')"
           ></div>
 
           <div class="auto-container">
             <div class="content-box">
               <div class="content">
                 <div class="inner">
-                  <div class="sub-title">{{i.slide_subtitle_index}}</div>
-                  <h2>{{i.slide_title_index}}</h2>
+                  <div class="sub-title">{{slider.slide_subtitle_index}}</div>
+                  <h2>{{slider.slide_title_index}}</h2>
                  
                 </div>
               </div>
@@ -43,9 +44,9 @@
                     <div class="sec-title">
                         <div class="sub-title"><h3 style="font-size:16px"> Since 2015<h3></div>
                           <h2 style="font-size:36px">Ashor Iraqi Foundation for Relief and Development</h2>
-                      </div>
-                      <div class="text">Aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaq officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</div>
-                      <div class="link-box"><a href="#" class="default-link"> READ MORE</a></div>
+                      </div> {% for i in data %}
+                      <div class="text">{{i.text_about_index}}</div>  {% endfor %}
+                      <div class="link-box"><a href="{% url 'jobs:about' %}" class="default-link"> READ MORE</a></div>
                       
                   </div>
               </div>
@@ -54,9 +55,9 @@
             <div class="inner">
               <div class="image-box">
                 <figure class="image">
-                 
-                  <img src="images/resource/event-image-7.jpg" style="height:358px; width:518px;" alt="">
-                
+                  {% for i in data %}
+                  <img src="{{i.image_about_index}}" style="height:358px; width:518px;" alt="">
+                  {% endfor %}
                 </figure>
                           <div class="caption-box wow fadeInUp" data-wow-delay="0ms">
                           </div>
@@ -69,15 +70,12 @@
   </section>
 
 <section class="what-we-do causes-section alternate-two news-section">
-      
-
-     
       <div class="auto-container">
        <div class="" style="padding-top:60px;padding-bottom:20px;text-align:center">
               <h2 >What We Are Doing</h2>
-          </div>
-            <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> The United Nations is the only voice that speaks for everyone on earth and the only place where all nations come together. Our challenges are so intertwined that we can only solve them together, with smart responses across countries, cultures and peoples. As our world grows more connected and threats more complex, the success of the UN is even more essential. That’s why the United Nations Foundation exists.</p>
-
+          </div> {% for i in data %}
+            <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> {{ i.text_what_we_are_doing_index }}</p>
+            {% endfor %}
 
           <div class="row clearfix">
               <!--Service Block-->
@@ -139,7 +137,7 @@
           </div>
           <div class="link-column col-xl-3 col-lg-12 col-md-12 col-sm-12">
             <div class="link-box">
-              <a href="#" class="theme-btn btn-style-two"
+              <a href="{% url 'jobs:volunteer' %}" class="theme-btn btn-style-two"
                 ><span class="btn-title">join to Volunteer</span></a
               >
             </div>
@@ -168,9 +166,9 @@
           <div class="image-column col-lg-6 col-md-12 col-sm-12">
             <div class="inner">
               <figure class="image wow slideInLeft">
-                
-                <img src="images/resource/event-image-7.jpg" style="width: 550px; height: 438px;" alt="" />
-                
+                {% for i in data %}
+                <img src="{{i.image_story_index}}" style="width: 550px; height: 438px;" alt="" />
+                {% endfor %}
               </figure>
               </div>
             </div>
@@ -182,12 +180,10 @@
                   <h2>OUR STORIES</h2>
                 </div>
                 <div class="text-content">
+                  {% for i in data %}
                   <div class="text">
-                    Consectetur adipisicing elit usmod tempor incididut
-                    laboret ipsum dolore magna aliquaut enim mini veniam quis
-                    trud exercitation ullamco sed labo nisiut aliquip ex ea
-                    consequat duis aute rue dolor.
-                  </div>
+                {{i.text_story_index}}
+                  </div>  {% endfor %}
                   <div class="link-box">
                     <a href="{% url 'blogs:story' %}" class="default-link" style="padding-top:20px;">VIEW ALL STORIES</a>
                   </div>

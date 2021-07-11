@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Blog, StoryList, StoryAndBlog, Team, StoriesDetail
-from .serializers import BlogSerializer, StoryListSerializer, StoryAndBlogSerializer, StoriesDetailSerializer, TeamSerializer
+from .models import Blog, StoryAndBlog, Team, StoryDetail
+from .serializers import BlogSerializer, StoryDetailSerializer, StoryAndBlogSerializer, TeamSerializer
 from django.http import HttpRequest
-from .filters import StoriesDetailFilter
-from .form import StoriesDetailForm
+from .filters import StoryDetailFilter
+from .form import StoryDetailForm
 from django.core.paginator import Paginator
 
 
@@ -22,13 +22,10 @@ def blogs(request):
 
 def stories(request):
     """Renders the create volunteer page."""
-    stories = StoriesDetail.objects.all()
-    assert isinstance(request, HttpRequest)
-    queryset = StoryList.objects.all()
-    serializer_class = StoryListSerializer(queryset, many=True)
+    stories = StoryDetail.objects.all()
 
     # filters
-    myfilter = StoriesDetailFilter(request.GET, queryset=stories)
+    myfilter = StoryDetailFilter(request.GET, queryset=stories)
     stories = myfilter.qs
 
     # Show many contacts per page.
@@ -36,20 +33,19 @@ def stories(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    context = {'stories': page_obj, 'myfilter': myfilter,
-               'data': serializer_class.data}  # template name
+    if stories:
+        context = {'stories': page_obj, 'myfilter': myfilter}  # template name
 
+    else:
+        context = {'message': "There are no stories available at the moment."}
     return render(request, 'stories.html', context)
 
 
 def stories_detail(request, id):
     """Renders the create volunteer page."""
-    stories = StoriesDetail.objects.get(id=id)
-    assert isinstance(request, HttpRequest)
-    queryset = StoriesDetail.objects.all()
-    serializer_class = StoriesDetailSerializer(queryset, many=True)
+    stories = StoryDetail.objects.get(id=id)
 
-    context = {'story': stories, 'data': serializer_class.data}
+    context = {'story': stories}
     return render(request, 'stories_detail.html', context)
 
 

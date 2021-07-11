@@ -58,7 +58,6 @@ class Application(models.Model):
         default="Arabic", max_length=6, blank=True, null=True)
 
     cover_letter = models.TextField()
-
     upload_cv = models.FileField(
         validators=[validate_file_extension],
         upload_to='uploadcv/')
@@ -71,6 +70,8 @@ class Application(models.Model):
 
     def __str__(self):
         return (self.email)
+
+
 
 
 class VisionMissionValue(models.Model):
@@ -92,47 +93,38 @@ class WhatWeAreDoing(models.Model):
     image_footer_logo_what_we_are_doing = models.FileField(
         validators=[validate_image_extension], upload_to='background/whatwe/', null=True, blank=True)
 
+class Contact(models.Model):
+    email_contact = models.CharField(max_length=300, default='')
+    phone_contact = models.CharField(max_length=300, default='')
 
 class Donate(models.Model):
     image_bg_donate = models.FileField(
         validators=[validate_image_extension], upload_to='background/donate/', null=True, blank=True)
-    image_header_logo_sticky_donate = models.FileField(
-        validators=[validate_image_extension], upload_to='background/donate/', null=True, blank=True)
-    image_footer_logo_donate = models.FileField(
-        validators=[validate_image_extension], upload_to='background/donate/', null=True, blank=True)
-
+    facebook_link = models.CharField(max_length=300, default='')
+    twitter_link = models.CharField(max_length=300, default='')
+    instagram_link = models.CharField(max_length=300, default='')
+    location_donate = models.CharField(max_length=300, default='')
+    email_donate = models.CharField(max_length=300, default='')
+    phone_donate = models.CharField(max_length=300, default='')
 
 class Volunteer(models.Model):
     image_bg_volunteer = models.FileField(
         validators=[validate_image_extension], upload_to='background/volunteer/', null=True, blank=True)
-    image_header_logo_sticky_volunteer = models.FileField(
-        validators=[validate_image_extension], upload_to='background/volunteer/', null=True, blank=True)
-    image_footer_logo_volunteer = models.FileField(
-        validators=[validate_image_extension], upload_to='background/volunteer/', null=True, blank=True)
 
 
 class About(models.Model):
-    image_bg_about = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
     image_middle_about = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_header_logo_sticky_about = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_footer_logo_about = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    text_about = models.CharField(max_length=300, default='')
 
 
 class GetInvolved(models.Model):
-    image_bg_getinvolved = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
     image_careers_getinvolved = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    text_careers_getinvolved = models.CharField(max_length=300, default='')
     image_joinus_getinvolved = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_header_logo_sticky_getinvolved = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_footer_logo_getinvolved = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+    text_joinus_getinvolved = models.CharField(max_length=300, default='')
 
 
 class WhoWeAre(models.Model):
@@ -157,23 +149,23 @@ class WhoWeAre(models.Model):
     WhoWeAre_desc7 = models.CharField(max_length=300, default='')
     image_bg_who_we_are = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_left_who_we_are = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_middle_who_we_are = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_right_who_we_are = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_header_logo_sticky_who_we_are = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
-    image_footer_logo_who_we_are = models.FileField(
-        validators=[validate_image_extension], upload_to='background/about/', null=True, blank=True)
+   
 
-
-class Index(models.Model):
+class Slider(models.Model):
     slide_image_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
     slide_title_index = models.CharField(max_length=300, default='')
     slide_subtitle_index = models.CharField(max_length=300, default='')
+   
+class Index(models.Model):
+    image_about_index = models.FileField(
+        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
+    text_about_index = models.CharField(max_length=300, default='')
+    text_what_we_are_doing_index = models.CharField(max_length=300, default='')
+    image_story_index = models.FileField(
+        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
+    text_story_index = models.CharField(max_length=300, default='')
+   
 
 
 class WhatWeAreDoingDetails(models.Model):

@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import StoriesDetail
+from .models import StoryDetail
 
 
-class StoriesDetailForm(forms.ModelForm):
+class StoryDetailForm(forms.ModelForm):
     class Meta:
-        model = StoriesDetail
+        model = StoryDetail
         fields = '__all__'
         exclude = ('id',)

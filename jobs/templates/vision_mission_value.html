@@ -24,26 +24,31 @@
     <!--Causes Section-->
     <section class="career-section-two alternate-two" >
       <div class="auto-container">
+          
             <div class="row clearfix">
 
                 <!--Content Side / Blog Detail-->
                 <div class="content-side ">
+                    <div class="lower-box story-details"> <h1  style="font-size: 25px;padding-bottom: 30px;padding-top: 30px;">Who We Are</h1>
+                        <div class="info-box clearfix">
+                       
+                                
+                      
+                    </div></div>
                     <div class="post-details">
-                        <!--Blog Details-->
+                        <!--Blog Details-->{% for i in data %}
                         <div class="blog-details">
-                          
-                            <div class="lower-box">
-                                <div class="info-box clearfix">
+                           
+                           
+                            <div class="lower-box story-details">
                                    
-                                </div>
                                 <div class="post-content">
                                  
                                      <div class="row clearfix">
-                                        <div class="column col-md-6 col-sm-12" style="padding-top: 10px;">
-<p class="big-text">Vission & Mission and Value</p>
-                                                                       <p>{{Vission_Mission_Value_desc1}}</p>
+                                        <div class="column col-md-6 col-sm-12" style="padding-top: 10px;"> 
+                                                                       <p>{{i.Vission_Mission_Value_desc1}}</p>
 
-                                                                       <p>{{Vission_Mission_Value_desc2}}</p>                                                                            </div>
+                                                                       <p>{{i.Vission_Mission_Value_desc2}}</p>                                                                            </div>
                                         <div class="column col-md-6 col-sm-12">
                                             <div class="inner">
                                                 <!--Accordion-->
@@ -53,7 +58,7 @@
                                                         <div class="acc-btn active">Our Vission <div class="icon flaticon-cross"></div></div>
                                                         <div class="acc-content">
                                                             <div class="content">
-                                                                <div class="text">{{vission_text}}</div>
+                                                                <div class="text">{{i.vission_text}}</div>
                                                             </div>
                                                         </div>
                                                     </div> 
@@ -63,7 +68,7 @@
                                                         <div class="acc-btn">Our mission  <div class="icon flaticon-cross"></div></div>
                                                         <div class="acc-content">
                                                             <div class="content">
-                                                                <div class="text">{{mission_text}}</div>
+                                                                <div class="text">{{i.mission_text}}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -73,7 +78,7 @@
                                                         <div class="acc-btn">Our Value<div class="icon flaticon-cross"></div></div>
                                                         <div class="acc-content">
                                                             <div class="content">
-                                                                <div class="text">{{value_text}}</div>
+                                                                <div class="text">{{i.value_text}}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,7 +93,7 @@
                         </div>
 
                      
-
+                        {% endfor %}
                     </div>
 
                 </div>

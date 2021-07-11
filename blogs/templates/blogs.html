@@ -25,58 +25,53 @@
    </section>
    <!--End Banner Section -->
    <div class="blog-section  ">
-     <div class="auto-container">
-         <div class="row clearfix " style="padding-top: 50px;">
-   
-             <!--Content Side / Blog Detail-->
-             {% for i in data %}
-             <div class="content-side col-lg-4 col-md-6 col-sm-12">
-                 <div class="blog-posts">
-                
-   
-                     <!--blog Block Two-->
-                     <div class="blog-block-two">
-                         <div class="inner-box">
-                             <div class="image-box">
-                                 <div class="kausid-carousel owl-theme owl-carousel" data-options='{"loop": true, "margin": 30, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" }, "1024":{ "items" : "1" }}}'>
-                                   {% for j in data %}
-                                   <figure class="image">
-                                       <img src="{{j.blogs_image}}" style="height:360px; width:280px;" alt="">
-                                     </figure>
-                                     {% endfor %}
-                                 </div>
-                                 
-                             </div>
-                             <div class="lower-box">
-                                 <div class="text"> {{i.blogs_desc}}</div>
-                                 <div class="bottom-box clearfix">
-                                     <div class="post-meta">
-                                         <div class="info-box clearfix">
-                                             <div class="cause-info">
-                                                 <ul class="clearfix">
-                                                     <li><span class="far fa-clock"></span> {{i.blogs_date}}</li>
-                                                     <li><span class="fa fa-map-marker-alt"></span> {{i.blogs_location}}</li>
-                                                 </ul>
-                                             </div>
-                                            
-                                                 
-                                         </div>
-                                     </div>
-                                     
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-   
-                   
+    <div class="auto-container">
+        <div class="row clearfix " style="padding-top: 50px;">
+          {% for i in data %}
+            <!--Content Side / Blog Detail-->
+            <div class="content-side col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-posts">
+                    <!--News Block Two-->
+                    <div class="blog-block-two">
+                        <div class="inner-box">
+                          <div class="image-box">
+                            <figure class="image"><a href="">  <img src="{{i.blogs_image}}"  width="350px" height="330px"alt=""></a></figure>
+                            
+                        </div>
+                            
+                          
+                            <div class="lower-box">
+                              <div class="text"> {{i.blogs_desc}}</div>
+                              <div class="bottom-box clearfix">
+                                    <div class="post-meta">
+                                        <div class="info-box clearfix">
+                                            <div class="cause-info">
+                                                <ul class="clearfix">
+                                                  <li><span class="far fa-clock"></span> {{i.blogs_date}}</li>
+                                                  <li><span class="fa fa-map-marker-alt"></span> {{i.blogs_location}}</li>
+                                               </ul>
+                                            </div>
+                                           
+                                                
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                   
-             </div>
-             <!--End Content Side-->
-             {% endfor %}
-          
-         </div>
-     </div>
-   </div>
+                 
+            </div>
+            <!--End Content Side-->
+
+         
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock body %}
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from .models import Application, WhatWeAreDoing, Volunteer, WhoWeAre, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
-from .serializers import ApplicationSerializer, WhoWeAreSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer, GetInvolvedSerializer
+from .models import Application,Slider, Contact,VisionMissionValue,  WhatWeAreDoing, Volunteer, WhoWeAre, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .serializers import ApplicationSerializer,SliderSerializer, VisionMissionValueSerializer, ContactSerializer, WhoWeAreSerializer, WhatWeAreDoingSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailsSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
@@ -94,10 +94,13 @@ def index(request):
     queryset = Index.objects.all()
     serializer_class = IndexSerializer(queryset, many=True)
 
-    return render(request, 'index.html',
-                  {
+    slider_show = Slider.objects.all()[:4]
+    context= {
                       'data': serializer_class.data,
+                      'slider_show': slider_show,
                   }
+    return render(request, 'index.html',context
+                 
                   )
 
 
@@ -114,6 +117,18 @@ def donate(request):
                   )
 
 
+def contact(request):
+    """Renders the create contact page."""
+    assert isinstance(request, HttpRequest)
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer(queryset, many=True)
+
+    return render(request, 'contact.html',
+                  {
+                      'data': serializer_class.data,
+                  }
+                  )
+
 def what_we_are_doing_details(request):
     """Renders the create volunteer page."""
     assert isinstance(request, HttpRequest)
@@ -126,6 +141,17 @@ def what_we_are_doing_details(request):
                   }
                   )
 
+def vision_mission_value(request):
+    """Renders the create VisionMissionValue page."""
+    assert isinstance(request, HttpRequest)
+    queryset = VisionMissionValue.objects.all()
+    serializer_class = VisionMissionValueSerializer (queryset, many=True)
+
+    return render(request, 'vision_mission_value.html',
+                  {
+                      'data': serializer_class.data,
+                  }
+                  )
 
 def about(request):
     """Renders the create volunteer page."""

@@ -1,5 +1,6 @@
+from jobs.serializers import SliderSerializer
 from django.contrib import admin
-from .models import VisionMissionValue, Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
+from .models import Contact,Slider, VisionMissionValue, Application, WhoWeAre, WhatWeAreDoing, Volunteer, Index, Donate, WhatWeAreDoingDetails, About, GetInvolved
 
 
 class ApplicationAdmin(admin.ModelAdmin):
@@ -16,28 +17,27 @@ class WhatWeAreDoingAdmin(admin.ModelAdmin):
 
 class DonateAdmin(admin.ModelAdmin):
     list_display = ['image_bg_donate',
-                    'image_header_logo_sticky_donate',
-                    'image_footer_logo_donate',
+                    'facebook_link',
+                    'twitter_link',
+                    'instagram_link',
+                    'location_donate',
+                    'email_donate',
+                    'phone_donate',
+                   
                     ]
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['email_contact',
+                    'phone_contact',
+                    ]
 
 class GetInvolvedAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_getinvolved',
+    list_display = [
                     'image_careers_getinvolved',
                     'image_joinus_getinvolved',
-                    'image_header_logo_sticky_getinvolved',
-                    'image_footer_logo_getinvolved',
+                    'text_careers_getinvolved',
+                    'text_joinus_getinvolved',
                     ]
-
-
-class VisionMissionValueAdmin(admin.ModelAdmin):
-    list_display = ['Vission_Mission_Value_desc1',
-                    'Vission_Mission_Value_desc2',
-                    'vission_text',
-                    'mission_text',
-                    'value_text',
-                    ]
-
 
 class WhoWeAreAdmin(admin.ModelAdmin):
     list_display = ['WhoWeAre_image1',
@@ -51,33 +51,45 @@ class WhoWeAreAdmin(admin.ModelAdmin):
                     'WhoWeAre_desc6',
                     'WhoWeAre_desc7',
                     'image_bg_who_we_are',
-                    'image_left_who_we_are',
-                    'image_middle_who_we_are',
-                    'image_right_who_we_are',
-                    'image_header_logo_sticky_who_we_are',
-                    'image_footer_logo_who_we_are',
+                   
                     ]
 
 
 class VolunteerAdmin(admin.ModelAdmin):
     list_display = ['image_bg_volunteer',
-                    'image_header_logo_sticky_volunteer',
-                    'image_footer_logo_volunteer',
+                    
                     ]
 
 
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_about',
+    list_display = ['text_about',
                     'image_middle_about',
-                    'image_header_logo_sticky_about',
-                    'image_footer_logo_about',
+                    
                     ]
 
 
-class IndexAdmin(admin.ModelAdmin):
+class VisionMissionValueAdmin(admin.ModelAdmin):
+    list_display = ['Vission_Mission_Value_desc1',
+                    'Vission_Mission_Value_desc2',
+                    'vission_text',
+                    'mission_text',
+                    'value_text',
+        
+                    ]
+class SliderAdmin(admin.ModelAdmin):
     list_display = ['slide_image_index',
                     'slide_title_index',
                     'slide_subtitle_index',
+                    
+                    ]
+
+class IndexAdmin(admin.ModelAdmin):
+    list_display = [
+                    'text_about_index',
+                    'image_about_index',
+                    'text_what_we_are_doing_index',
+                    'image_story_index',
+                    'text_story_index'
                     ]
 
 
@@ -110,11 +122,15 @@ class WhatWeAreDoingDetailsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Index, IndexAdmin)
+admin.site.register(Slider, SliderAdmin)
+
 admin.site.register(GetInvolved, GetInvolvedAdmin)
 admin.site.register(Donate, DonateAdmin)
+admin.site.register(Contact, ContactAdmin)
 admin.site.register(Application, ApplicationAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(WhoWeAre, WhoWeAreAdmin)
+admin.site.register(VisionMissionValue, VisionMissionValueAdmin)
 admin.site.register(WhatWeAreDoing, WhatWeAreDoingAdmin)
 admin.site.register(WhatWeAreDoingDetails, WhatWeAreDoingDetailsAdmin)

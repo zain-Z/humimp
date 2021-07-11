@@ -1,0 +1,51 @@
+jobs app:
+
+1) what i did :
+- changed models for about,contact,slider image, and donate
+- changed serializers
+- changed admin list display
+- view page (vision, mission and value)  and contact
+- view who we slider to index page 
+
+things not working:
+-stories(of course to you because i faild to solve it) >>>> `solved` (you can edit message's style in stories.html line 28)
+-what we are doing(it same stories if you can do it do if not no problem i will do it tomorrow)(this to me i will se how you will do the stories and then i will do it)
+-language(please to you)
+-i send to you message about stories in index, in section stories in index page  we should show just 3 stories depend on date (like latest stories )
+-i thing you can show the same message when user submit the careers,volunteer and contact like what you make when no carres are available you show message(this to you)
+-problem in fileds in contact(also i will do it tomorrow  because you have more than one things to do)
+-problem with design blogand stories i thing , image size, get_involved, navebar and navbar mobile(i will do it tomorrow)
+
+-------------------------------------------------------------------------------------------
+
+blogs app:
+
+1) what i did :
+- i still have problem with stories, soorrry 
+
+2) notice :(i solved some of them)
+-added vission.html and contact.html to templates,  this done
+-there are some things i couldn't make a decision with:-(because i know you will change it or delete it later):-(no problem reaaallly)
+  1- (actually, i forgot this page and i decide to make this page like stories and careers) in what_we_are_doing_details.html ( line 108 images/  , line 107 data-src= images/ ) you have to change them to smth like {{i.your_var_name}}
+  2- vision-mission-value.html ( done ) 
+  3- index.html ( line 129 ) you have slide pictures so i don't know what to do with it , ( done )
+  4- teams.html ( done )
+  5- stories.html ( not )
+  6- stories_detail.html ( not )
+-didn't do anything for contact.html done but have problem in form in html i just need to show filed(fullname, email, phone number, subject and message)
+-don't forget what i had said about applicantslist.html (actually i forget what you saied)
+***** maybe there are more things that i didn't notice ****** yeap me too but i changed things and also forgot to share with you 
+
+--------------------------------------------------------------------------------------------
+
+warnings:
+-didn't make views for vision(i did it )
+-in each template we have to figure out a color for the background and don't forget to set width to 1920 and height to 320(tomorrow i will do it)
+-if you are goint to call an image like this {{var_name_image}} .. you have to add ".url" so it will be like this {{var_name_image.url}} (it worked with me when i add image inside for loop i didn't face these problem)
+-if you are goint to call an image like this {{i.var_name_image}} .. don't write url in the end (notic some image work well without adding .url other not like slider image didnot show image until i add .url, so i do not have problem with other image)
+-in all your templates .. add t to about because it's like that "abou" in the footer(i did it)
+-index.html (line 58 , 172 ) actually, i didnot know what the problem in these line.......
+---------------------------------------------------------------------------------------------
+
+last but not least .. check viber .. if you forgot our sequence and if you have any questions.......
+
