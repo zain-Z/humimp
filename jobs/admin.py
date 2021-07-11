@@ -86,9 +86,7 @@ class IndexAdmin(admin.ModelAdmin):
     list_display = [
         'text_about_index',
         'image_about_index',
-        'text_what_we_are_doing_index',
-        'image_story_index',
-        'text_story_index'
+
     ]
 
 

@@ -7,6 +7,9 @@ from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from .filters import WhatWeAreDoingDetailFilter
 from .form import WhatWeAreDoingDetailForm
 from django.core.paginator import Paginator
+from blogs.filters import StoryDetailFilter
+from blogs.form import StoryDetailForm
+from blogs.models import StoryDetail
 
 
 class ApplicationList(generics.ListCreateAPIView):
@@ -79,19 +82,31 @@ def volunteer(request):
 
 
 def index(request):
-    """Renders the create volunteer page."""
     assert isinstance(request, HttpRequest)
     queryset = Index.objects.all()
     serializer_class = IndexSerializer(queryset, many=True)
+
+    stories = StoryDetail.objects.all()
+    whatWeDo = WhatWeAreDoingDetail.objects.all()
+
+    # Show many contacts per page for stories
+    paginator_story = Paginator(stories, 10000000000000000)
+    page_number_story = request.GET.get('page')
+    page_obj_story = paginator_story.get_page(page_number_story)
+
+    # Show many contacts per page for what we are doing
+    paginator = Paginator(whatWeDo, 10000000000000000)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     slider_show = Slider.objects.all()[:4]
     context = {
         'data': serializer_class.data,
         'slider_show': slider_show,
+        'whatWeDoss': page_obj,
+        'stories': page_obj_story,
     }
-    return render(request, 'index.html', context
-
-                  )
+    return render(request, 'index.html', context)
 
 
 def donate(request):

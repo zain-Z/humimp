@@ -20,8 +20,8 @@ def blogs(request):
                   )
 
 
-def stories(request):
-    """Renders the create volunteer page."""
+def stories_list(request):
+
     stories = StoryDetail.objects.all()
 
     # filters

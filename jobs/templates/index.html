@@ -73,9 +73,12 @@
       <div class="auto-container">
        <div class="" style="padding-top:60px;padding-bottom:20px;text-align:center">
               <h2 >What We Are Doing</h2>
-          </div> {% for i in data %}
-            <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> {{ i.text_what_we_are_doing_index }}</p>
-            {% endfor %}
+          </div>   {% for whatWeDo in whatWeDoss %}
+          {% if forloop.counter < 4 %}
+            <p style="text-align:center;padding-top:20px;padding-bottom:50px;">{{whatWeDo.whatDoDetail_name}}</p>
+            {{whatWeDo.whatDoDetail_name}}
+            {% endif %}
+           {% endfor %}
 
           <div class="row clearfix">
               <!--Service Block-->
@@ -166,9 +169,12 @@
           <div class="image-column col-lg-6 col-md-12 col-sm-12">
             <div class="inner">
               <figure class="image wow slideInLeft">
-                {% for i in data %}
-                <img src="{{i.image_story_index}}" style="width: 550px; height: 438px;" alt="" />
-                {% endfor %}
+                {% for whatWeDo in whatWeDoss %}
+                {% if forloop.counter < 4 %}
+                <img src="{{whatWeDo.whatDoDetail_image_gallery.url}}" style="width: 550px; height: 438px;" alt="" />
+                {{whatWeDo.whatDoDetail_name}}
+                {% endif %}
+               {% endfor %}
               </figure>
               </div>
             </div>
@@ -180,9 +186,11 @@
                   <h2>OUR STORIES</h2>
                 </div>
                 <div class="text-content">
-                  {% for i in data %}
+                  {% for story in stories %}
+                  {% if forloop.counter < 3 %}
                   <div class="text">
-                {{i.text_story_index}}
+                    {{story.story_name}}
+                    {% endif %}
                   </div>  {% endfor %}
                   <div class="link-box">
                     <a href="{% url 'blogs:story' %}" class="default-link" style="padding-top:20px;">VIEW ALL STORIES</a>

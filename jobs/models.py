@@ -154,10 +154,6 @@ class Index(models.Model):
     image_about_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
     text_about_index = models.CharField(max_length=300, default='')
-    text_what_we_are_doing_index = models.CharField(max_length=300, default='')
-    image_story_index = models.FileField(
-        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
-    text_story_index = models.CharField(max_length=300, default='')
 
 
 class WhatWeAreDoingDetail(models.Model):

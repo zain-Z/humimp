@@ -10,7 +10,7 @@ urlpatterns = [
     path('teams/', views.teams, name='teams'),
 
 
-    path('stories/', views.stories, name='story'),
+    path('stories/', views.stories_list, name='story'),
     path('story_detail/<int:id>', views.stories_detail, name='stories_detail'),
 
     # api

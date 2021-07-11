@@ -11,7 +11,7 @@ things not working:
 -stories(of course to you because i faild to solve it) >>>> `solved` (you can edit message's style in stories.html line 28)
 -what we are doing(it same stories if you can do it do if not no problem i will do it tomorrow)(this to me i will se how you will do the stories and then i will do it) >>> `solved` (you can edit message's style in what_we_are_doing.html line 33)
 -language(please to you)
--i send to you message about stories in index, in section stories in index page  we should show just 3 stories depend on date (like latest stories )
+-i send to you message about stories in index, in section stories in index page  we should show just 3 stories depend on date (like latest stories )>>>(solved for stories and WhatWeAreDoing):check index.html and things from admin to see changes
 -i thing you can show the same message when user submit the careers,volunteer and contact like what you make when no carres are available you show message(this to you)
 -problem in fileds in contact(also i will do it tomorrow  because you have more than one things to do)
 -problem with design blogand stories i thing , image size, get_involved, navebar and navbar mobile(i will do it tomorrow)
