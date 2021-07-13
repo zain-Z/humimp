@@ -84,8 +84,18 @@ class VisionMissionValue(models.Model):
 
 
 class Contact(models.Model):
-    email_contact = models.CharField(max_length=300, default='')
-    phone_contact = models.CharField(max_length=300, default='')
+    full_name = models.CharField(max_length=200, default='')
+    email = models.EmailField(
+        max_length=255, unique=True, db_index=True, default='')
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{9,14}$',
+        message="Phone number must be entered in the format: '+999999999'.\
+             Up to 14 digits allowed.")
+    phone = models.CharField(
+        validators=[phone_regex],
+        max_length=17, unique=True, default='')
+    subject = models.CharField(max_length=200, default='')
+    message = models.TextField(default='')
 
 
 class Donate(models.Model):

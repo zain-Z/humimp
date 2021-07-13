@@ -21,9 +21,13 @@ class DonateAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['email_contact',
-                    'phone_contact',
-                    ]
+    list_display = [
+        'full_name',
+        'email',
+        'phone',
+        'subject',
+        'message',
+    ]
 
 
 class GetInvolvedAdmin(admin.ModelAdmin):

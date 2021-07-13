@@ -1,27 +1,16 @@
 jobs app:
 
-1) what i did :
-- changed models for about,contact,slider image, and donate
-- changed serializers
-- changed admin list display
-- view page (vision, mission and value)  and contact
-- view who we slider to index page 
 
 things not working:
--stories(of course to you because i faild to solve it) >>>> `solved` (you can edit message's style in stories.html line 28)
--what we are doing(it same stories if you can do it do if not no problem i will do it tomorrow)(this to me i will se how you will do the stories and then i will do it) >>> `solved` (you can edit message's style in what_we_are_doing.html line 33)
--language(please to you)
--i send to you message about stories in index, in section stories in index page  we should show just 3 stories depend on date (like latest stories )>>>(solved for stories and WhatWeAreDoing):check index.html and things from admin to see changes
+
 -i thing you can show the same message when user submit the careers,volunteer and contact like what you make when no carres are available you show message(this to you)
 -problem in fileds in contact(also i will do it tomorrow  because you have more than one things to do)
--problem with design blogand stories i thing , image size, get_involved, navebar and navbar mobile(i will do it tomorrow)
+-problem with design blog and stories i thing , image size, get_involved, navebar and navbar mobile(i will do it tomorrow)
 
 -------------------------------------------------------------------------------------------
 
 blogs app:
 
-1) what i did :
-- i still have problem with stories, soorrry 
 
 2) notice :(i solved some of them)
 -added vission.html and contact.html to templates,  this done
@@ -39,11 +28,10 @@ blogs app:
 --------------------------------------------------------------------------------------------
 
 warnings:
--didn't make views for vision(i did it )
--in each template we have to figure out a color for the background and don't forget to set width to 1920 and height to 320(tomorrow i will do it)
--if you are goint to call an image like this {{var_name_image}} .. you have to add ".url" so it will be like this {{var_name_image.url}} (it worked with me when i add image inside for loop i didn't face these problem)
--if you are goint to call an image like this {{i.var_name_image}} .. don't write url in the end (notic some image work well without adding .url other not like slider image didnot show image until i add .url, so i do not have problem with other image)
--in all your templates .. add t to about because it's like that "abou" in the footer(i did it)
+
+
+
+
 -index.html (line 58 , 172 ) actually, i didnot know what the problem in these line.......
 ---------------------------------------------------------------------------------------------
 

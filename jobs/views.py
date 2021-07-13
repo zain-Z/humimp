@@ -124,11 +124,26 @@ def donate(request):
 
 def contact(request):
     """Renders the create contact page."""
+    return render(request, 'contact.html')
+
+
+def contactList(request):
+    """Renders the create contact page."""
     assert isinstance(request, HttpRequest)
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer(queryset, many=True)
-
-    return render(request, 'contact.html',
+    full_name = request.GET.get('full_name')
+    email = request.GET.get('email')
+    phone = request.GET.get('phone')
+    subject = request.GET.get('subject')
+    message = request.GET.get('message')
+    contactcreated = Contact.objects.create(full_name=full_name,
+                                            email=email,
+                                            phone=phone,
+                                            subject=subject,
+                                            message=message,
+                                            )
+    return render(request, 'contactList.html',
                   {
                       'data': serializer_class.data,
                   }
