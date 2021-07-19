@@ -1,6 +1,8 @@
 from django.db import models
 from .validators import validate_file_extension, validate_image_extension
 from django.core.validators import RegexValidator
+from django.utils.translation import gettext_lazy as _
+
 
 REGION_TYPE = (
     ('Baghdad', "Baghdad"),

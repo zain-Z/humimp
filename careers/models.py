@@ -1,7 +1,7 @@
 from django.db import models
 from .validators import validate_image_extension
 from datetime import date
-
+from django.utils.translation import gettext_lazy as _
 
 JOB_TYPE = (
     ('1', "Full time"),
@@ -35,7 +35,7 @@ class CareerDetail(models.Model):
 class CareerList(models.Model):
     image_bg_career_list = models.FileField(
         validators=[validate_image_extension], upload_to='background/career_list/', null=True, blank=True)
-  
+
 
 class CareerDetatilImage(models.Model):
 
