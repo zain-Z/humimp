@@ -60,9 +60,10 @@ class Application(models.Model):
         default="Arabic", max_length=6, blank=True, null=True)
 
     cover_letter = models.TextField()
+
     upload_cv = models.FileField(
         validators=[validate_file_extension],
-        upload_to='uploadcv/')
+        upload_to='uploadcv/', blank=False, null=False)
 
     def __str__(self):
         return (self.phone)
@@ -166,18 +167,22 @@ class Index(models.Model):
     image_about_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
     text_about_index = models.CharField(max_length=300, default='')
+    image_story_index = models.FileField(
+        validators=[validate_image_extension], upload_to='background/index/', null=True, blank=True)
+    text_story_index = models.CharField(max_length=300, default='')
+    whatDoDetail_text = models.CharField(max_length=300, default='')
 
 
 class WhatWeAreDoingDetail(models.Model):
     whatDoDetail_image_gallery = models.FileField(
         validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
-
     whatDoDetail_image1 = models.FileField(
         validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
     whatDoDetail_image2 = models.FileField(
         validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
     whatDoDetail_image3 = models.FileField(
         validators=[validate_image_extension], upload_to='background/WhatWeAreDoingDetails/', null=True, blank=True)
+    whatDoDetail_icon_name = models.CharField(max_length=300, default='')
 
     whatDoDetail_name = models.CharField(max_length=300, default='')
     whatDoDetail_desc1 = models.CharField(max_length=300, default='')

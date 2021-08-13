@@ -32,18 +32,22 @@
            
               <h3  style="color:#426E94;text-align:center; padding-top:70px;  background-color:white;">{{message}}</h3>
             <div class="row clearfix">
-              
+              {% for whatWeDo in whatWeDoss %} 
                 <!--Service Block-->
                 <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms">
-                    <div class="inner-box">
-                        <div class="icon"><span class="flaticon-therapy"></span></div>
-                        {% for whatWeDo in whatWeDoss %}
+                  
+                  <div class="inner-box">
+                    
+                        <div class="icon"><span class='{{ whatWeDo.whatDoDetail_icon_name }}'></span></div>
+                       
                         <h3><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}">{{whatWeDo.whatDoDetail_name}}</a></h3>
                         <div class="text">{{whatWeDo.whatDoDetail_desc1}}</div>
                         <div class="link-box"><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}" class="theme-btn">Explore</a></div>
                     </div>
+                  
                 </div>
-               {% endfor %}
+                {% endfor %}
+             
             </div>
         </div>
     </section>

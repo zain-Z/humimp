@@ -90,6 +90,11 @@ class IndexAdmin(admin.ModelAdmin):
     list_display = [
         'text_about_index',
         'image_about_index',
+        'image_story_index',
+        'text_story_index',
+            'whatDoDetail_text',
+
+
 
     ]
 
@@ -108,6 +113,7 @@ class WhatWeAreDoingDetailAdmin(admin.ModelAdmin):
                     'whatDoDetail_desc5',
                     'whatDoDetail_desc6',
                     'whatDoDetail_desc7',
+                    'whatDoDetail_icon_name',
                     ]
 
 
