@@ -15,6 +15,8 @@ class CareerDetail(models.Model):
         validators=[validate_image_extension], upload_to='background/career_details/', null=True, blank=True)
     title = models.CharField(max_length=300, default='', null=True)
     description = models.TextField(null=True)
+    role_and_responsibilities = models.TextField(null=True)
+    qualifications_and_preferred_skills = models.TextField(null=True)
     contract_duration = models.CharField(max_length=300, default='', )
     governorate = models.CharField(max_length=300, default='')
     job_type = models.CharField(choices=JOB_TYPE, max_length=1)
