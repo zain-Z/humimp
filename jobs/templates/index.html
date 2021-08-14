@@ -170,8 +170,9 @@
 <section class="stories-section load-more-section" data-load-number="2">
   <div class="auto-container">
     <div class="row clearfix " style="padding-top:80px">
-      {% if forloop.counter < 4 %}
-         {% for story in stories %}
+      
+         {% for story in stories reversed %}
+         {% if forloop.counter < 4 %}
    
                 <div class=" col-lg-4 col-md-6 col-sm-12">
 
@@ -219,7 +220,7 @@
       </aside>
       </div>
 
-             {% endfor %}    {% endif %}
+      {% endif %}  {% endfor %}    
     </div>
   </div>
 </section>
