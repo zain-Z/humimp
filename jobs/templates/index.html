@@ -171,7 +171,7 @@
   <div class="auto-container">
     <div class="row clearfix " style="padding-top:80px">
       
-         {% for story in stories reversed %}
+         {% for story in stories %}
          {% if forloop.counter < 4 %}
    
                 <div class=" col-lg-4 col-md-6 col-sm-12">
@@ -182,6 +182,8 @@
           <div class="widget-inner">
             <div class="widget-content">
               <figure class="image">
+                
+                
                 <img
                  src="{{story.story_image_one.url}}" style="height:176px; width:270px;"
                   alt=""

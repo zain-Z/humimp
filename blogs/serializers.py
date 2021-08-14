@@ -28,3 +28,4 @@ class StoryDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = StoryDetail
         fields = '__all__'
+        ordering = ['-story_date']

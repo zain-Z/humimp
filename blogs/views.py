@@ -22,7 +22,7 @@ def blogs(request):
 
 def stories_list(request):
 
-    stories = StoryDetail.objects.all()
+    stories = StoryDetail.objects.all().order_by('-story_date')
 
     # filters
     myfilter = StoryDetailFilter(request.GET, queryset=stories)
@@ -43,7 +43,7 @@ def stories_list(request):
 
 def stories_detail(request, id):
     """Renders the create volunteer page."""
-    stories = StoryDetail.objects.get(id=id)
+    stories = StoryDetail.objects.get(id=id).order_by('-story_date')
 
     context = {'story': stories}
     return render(request, 'stories_detail.html', context)

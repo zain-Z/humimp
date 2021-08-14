@@ -42,6 +42,9 @@ class StoryDetail(models.Model):
     story_desc6 = models.CharField(max_length=300, default='')
     story_desc7 = models.CharField(max_length=300, default='')
 
+    class Meta:
+        ordering = ['-story_date']
+
 
 class StoryAndBlog(models.Model):
     image_bg_stories = models.FileField(
