@@ -3,7 +3,8 @@ from .models import Blog, StoryAndBlog, Team, StoryDetail
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['blogs_image',
+    list_display = ['id',
+                    'blogs_image',
                     'blogs_date',
                     'blogs_desc',
                     'blogs_location',
@@ -11,7 +12,8 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 class StoryAndBlogAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_stories',
+    list_display = ['id',
+                    'image_bg_stories',
                     'text_bg_stories',
                     'image_bg_blogs',
                     'text_bg_blogs',
@@ -19,7 +21,8 @@ class StoryAndBlogAdmin(admin.ModelAdmin):
 
 
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['teams_image',
+    list_display = ['id',
+                    'teams_image',
                     'teams_name',
                     'teams_desc',
                     ]

@@ -3,13 +3,15 @@ from .models import CareerDetail, CareerList, CareerDetatilImage
 
 
 class CareerListAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_career_list',
-                   
+    list_display = ['id',
+                    'image_bg_career_list',
+
                     ]
 
 
 class CareerDetatilImageAdmin(admin.ModelAdmin):
-    list_display = ['image_header_logo_sticky_career_detail_image',
+    list_display = ['id',
+                    'image_header_logo_sticky_career_detail_image',
                     'image_footer_logo_career_detail_image',
                     ]
 

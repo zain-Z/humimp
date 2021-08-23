@@ -9,7 +9,8 @@ class ApplicationAdmin(admin.ModelAdmin):
 
 
 class DonateAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_donate',
+    list_display = ['id',
+                    'image_bg_donate',
                     'facebook_link',
                     'twitter_link',
                     'instagram_link',
@@ -21,26 +22,27 @@ class DonateAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = [
-        'full_name',
-        'email',
-        'phone',
-        'subject',
-        'message',
-    ]
+    list_display = ['id',
+                    'full_name',
+                    'email',
+                    'phone',
+                    'subject',
+                    'message',
+                    ]
 
 
 class GetInvolvedAdmin(admin.ModelAdmin):
-    list_display = [
-        'image_careers_getinvolved',
-        'image_joinus_getinvolved',
-        'text_careers_getinvolved',
-        'text_joinus_getinvolved',
-    ]
+    list_display = ['id',
+                    'image_careers_getinvolved',
+                    'image_joinus_getinvolved',
+                    'text_careers_getinvolved',
+                    'text_joinus_getinvolved',
+                    ]
 
 
 class WhoWeAreAdmin(admin.ModelAdmin):
-    list_display = ['WhoWeAre_image1',
+    list_display = ['id',
+                    'WhoWeAre_image1',
                     'WhoWeAre_image2',
                     'WhoWeAre_image3',
                     'WhoWeAre_desc1',
@@ -56,20 +58,23 @@ class WhoWeAreAdmin(admin.ModelAdmin):
 
 
 class VolunteerAdmin(admin.ModelAdmin):
-    list_display = ['image_bg_volunteer',
+    list_display = ['id',
+                    'image_bg_volunteer',
 
                     ]
 
 
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ['text_about',
+    list_display = ['id',
+                    'text_about',
                     'image_middle_about',
 
                     ]
 
 
 class VisionMissionValueAdmin(admin.ModelAdmin):
-    list_display = ['Vission_Mission_Value_desc1',
+    list_display = ['id',
+                    'Vission_Mission_Value_desc1',
                     'Vission_Mission_Value_desc2',
                     'vission_text',
                     'mission_text',
@@ -79,7 +84,8 @@ class VisionMissionValueAdmin(admin.ModelAdmin):
 
 
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ['slide_image_index',
+    list_display = ['id',
+                    'slide_image_index',
                     'slide_title_index',
                     'slide_subtitle_index',
 
@@ -87,16 +93,16 @@ class SliderAdmin(admin.ModelAdmin):
 
 
 class IndexAdmin(admin.ModelAdmin):
-    list_display = [
-        'text_about_index',
-        'image_about_index',
-        'image_story_index',
-        'text_story_index',
-            'whatDoDetail_text',
+    list_display = ['id',
+                    'text_about_index',
+                    'image_about_index',
+                    'image_story_index',
+                    'text_story_index',
+                    'whatDoDetail_text',
 
 
 
-    ]
+                    ]
 
 
 class WhatWeAreDoingDetailAdmin(admin.ModelAdmin):

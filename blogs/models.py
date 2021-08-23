@@ -6,6 +6,7 @@ from datetime import date
 
 
 class Blog(models.Model):
+   
     blogs_image = models.FileField(
         validators=[validate_image_extension], upload_to='background/blogs/', null=True, blank=True)
 
