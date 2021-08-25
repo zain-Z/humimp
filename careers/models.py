@@ -13,8 +13,8 @@ JOB_TYPE = (
 class CareerDetail(models.Model):
     image_career_details = models.FileField(
         validators=[validate_image_extension], upload_to='background/career_details/', null=True, blank=True)
-    title = models.CharField(max_length=300, default='', null=True)
-    description = models.TextField(null=True)
+    title = models.CharField(max_length=300, default='', null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     # Roles and Resposibilities
     role_1 = models.TextField(null=True, blank=True)
@@ -59,18 +59,26 @@ class CareerDetail(models.Model):
     skill_18 = models.TextField(null=True, blank=True)
     skill_19 = models.TextField(null=True, blank=True)
     skill_20 = models.TextField(null=True, blank=True)
-    contract_duration = models.CharField(max_length=300, default='', )
-    governorate = models.CharField(max_length=300, default='')
-    job_type = models.CharField(choices=JOB_TYPE, max_length=1)
-    job_shift = models.CharField(choices=JOB_TYPE, max_length=1)
-    location = models.CharField(max_length=300, default='', null=True)
-    posted = models.DateField(default=date.today)
-    minimum_education = models.CharField(max_length=300, default='')
-    minimum_experience = models.CharField(max_length=300, default='')
-    required_travel = models.CharField(max_length=150, default='')
-    no_of_jobs = models.PositiveIntegerField(default=1)
-    deadline = models.DateField(default=date.today)
-    puplished = models.DateField(default=date.today)
+    contract_duration = models.CharField(
+        max_length=300, default='', null=True, blank=True)
+    governorate = models.CharField(
+        max_length=300, default='', null=True, blank=True)
+    job_type = models.CharField(
+        choices=JOB_TYPE, max_length=1, null=True, blank=True)
+    job_shift = models.CharField(
+        choices=JOB_TYPE, max_length=1, null=True, blank=True)
+    location = models.CharField(
+        max_length=300, default='', null=True, blank=True)
+    posted = models.DateField(default=date.today, null=True, blank=True)
+    minimum_education = models.CharField(
+        max_length=300, default='', null=True, blank=True)
+    minimum_experience = models.CharField(
+        max_length=300, default='', null=True, blank=True)
+    required_travel = models.CharField(
+        max_length=150, default='', null=True, blank=True)
+    no_of_jobs = models.PositiveIntegerField(default=1, null=True, blank=True)
+    deadline = models.DateField(default=date.today, null=True, blank=True)
+    puplished = models.DateField(default=date.today, null=True, blank=True)
 
     def __str__(self):
         return self.title
