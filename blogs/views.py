@@ -43,7 +43,7 @@ def stories_list(request):
 
 def stories_detail(request, id):
     """Renders the create volunteer page."""
-    stories = StoryDetail.objects.get(id=id).order_by('-story_date')
+    stories = StoryDetail.objects.get(id=id)
 
     context = {'story': stories}
     return render(request, 'stories_detail.html', context)

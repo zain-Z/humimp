@@ -10,6 +10,8 @@ from django.core.paginator import Paginator
 from blogs.filters import StoryDetailFilter
 from blogs.form import StoryDetailForm
 from blogs.models import StoryDetail
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate
 
 
 class ApplicationList(generics.ListCreateAPIView):
@@ -61,11 +63,21 @@ def applicantsList(request):
                                              cover_letter=cover_letter,
                                              upload_cv=upload_cv,)
 
+    trans = translate(language='ar')
+
     return render(request, 'applicantsList.html',
                   {
                       'data': serializer_class.data,
                   }
                   )
+
+
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+    finally:
+        activate(cur_language)
 
 
 def volunteer(request):
