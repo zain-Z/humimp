@@ -194,11 +194,15 @@ class Index(models.Model):
         validators=[validate_image_extension], upload_to='background/index/', default='',   blank=True)
     text_about_index = models.CharField(
         max_length=300, default='',   blank=True)
+    text_about_index_ar = models.CharField(
+        max_length=300, default='',   blank=True)
     image_story_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', default='',   blank=True)
     text_story_index = models.CharField(
         max_length=300, default='',   blank=True)
     whatDoDetail_text = models.CharField(
+        max_length=300, default='',   blank=True)
+    whatDoDetail_text_ar = models.CharField(
         max_length=300, default='',   blank=True)
 
 

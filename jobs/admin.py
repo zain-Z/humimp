@@ -95,10 +95,12 @@ class SliderAdmin(admin.ModelAdmin):
 class IndexAdmin(admin.ModelAdmin):
     list_display = ['id',
                     'text_about_index',
+                    'text_about_index_ar',
                     'image_about_index',
                     'image_story_index',
                     'text_story_index',
                     'whatDoDetail_text',
+                    'whatDoDetail_text_ar',
 
 
 

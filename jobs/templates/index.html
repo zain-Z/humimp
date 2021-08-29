@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!-- Banner Section -->
 <section class="banner-section">
 
@@ -42,7 +44,12 @@
             </div>
             <h2 style="font-size:36px">Ashor Iraqi Foundation for Relief and Development</h2>
           </div> {% for i in data %}
-          <div class="text">{{i.text_about_index}}</div> {% endfor %}
+                      <div class="text"> 
+            {% if LANGUAGE_CODE == 'en' %}{{ i.text_about_index }} 
+            {% elif LANGUAGE_CODE == 'ar' %}{{ i.text_about_index_ar }}{% endif %}
+          </div> 
+           {% endfor %}
+         
           <div class="link-box"><a href="{% url 'jobs:about' %}" class="default-link"> READ MORE</a></div>
 
         </div>
@@ -71,9 +78,12 @@
     <div class="" style="padding-bottom:20px;padding-top:40px;text-align:center">
       <h2>What We Are Doing</h2>
     </div>
-    {% for i in data %}
-    <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> {{i.whatDoDetail_text}}</p>
-    {% endfor %}
+  </div> {% for i in data %}
+  <p style="text-align:center;padding-top:20px;padding-bottom:50px;">
+{% if LANGUAGE_CODE == 'en' %}{{ i.whatDoDetail_text }} 
+{% elif LANGUAGE_CODE == 'ar' %}{{ i.whatDoDetail_text_ar }}{% endif %}
+</p> 
+{% endfor %}
     <div class="row clearfix">
 
       {% for whatWeDo in whatWeDoss %}
